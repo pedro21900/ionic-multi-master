@@ -1,0 +1,35 @@
+ion-card {
+    box-shadow: none !important;
+    --background: none !important;
+}
+
+img {
+  object-fit: cover;
+  width: 100% !important;
+  min-height: 115px !important;
+  max-height: 115px !important;
+  border-radius: 10px;
+}
+
+ion-card-content {
+  padding: 10px 16px;
+
+  p {
+    font-weight: 300;
+    font-size: 13px;
+    text-align: left;
+    line-height: 20px;
+  }
+}
+
+.light {
+  p {
+    color: #151522;
+  }
+}
+
+.dark {
+  p {
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,23 @@
+<ion-content class="ion-padding">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button
+      size="small"
+      color="light"
+      (click)="dismissModal()"
+    >
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div class="container">
+    <ion-avatar>
+      <ion-img [src]="info.avatar"></ion-img>
+    </ion-avatar>
+    <ion-text class="title">{{ info.fullName }}</ion-text>
+    <ion-text class="subtitle">{{ info.bio }}</ion-text>
+    <ion-buttons class="ion-justify-content-center">     
+      <ion-button *ngFor="let item of info.social" fill="clear" size="small" shape="round" color="tertiary">
+        <ion-icon  slot="icon-only" [name]="'logo-' + item.name"></ion-icon>
+      </ion-button>       
+    </ion-buttons>
+  </div>
+</ion-content>

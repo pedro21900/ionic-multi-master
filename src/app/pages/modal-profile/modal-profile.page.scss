@@ -1,0 +1,58 @@
+ion-content,
+ion-header ion-toolbar {
+  --background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  height: 100%;
+}
+
+ion-avatar {
+  margin-bottom: 16px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+  color: var(--ion-color-dark);
+  margin-bottom: 6px;
+}
+
+ion-fab-button {
+  --ion-color-base: #fff !important;
+  --box-shadow: none !important;
+  --color: var(--ion-color-primary);
+}
+
+.subtitle {
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  color: var(--ion-color-dark);
+  margin-bottom: 16px;
+}
+
+
+@media (max-device-height: 640px), handheld and (orientation: portrait) {
+  ion-avatar,
+  .subtitle,
+  ion-buttons {
+    margin-bottom: 8px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+}
