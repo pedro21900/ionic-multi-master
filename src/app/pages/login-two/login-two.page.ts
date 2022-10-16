@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { emailValidator } from 'src/app/validators/email.validators';
 import { passwordValidator } from 'src/app/validators/password.validator';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-login-two',
@@ -13,16 +14,16 @@ export class LoginTwoPage implements OnInit {
   loginForm: FormGroup;
 
   background = {
-    backgroundImage: 'url(https://images.unsplash.com/photo-1579033462043-0f11a7862f7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80)'
+    backgroundImage: 'url(../../../assets/img/splashbg.png)'
   };
+  $estadoConfigService: any = [{ds_estado:'Rio de Janeiro'},{ds_estado:'Pará'}];
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: [null, [Validators.required, emailValidator]],
-      password: [null, [Validators.required, passwordValidator]],
-      faceID: [false]
+      estado: [null, [Validators.required]],
+      cpfAndCpnj: [null, [Validators.required]],
     });
   }
 

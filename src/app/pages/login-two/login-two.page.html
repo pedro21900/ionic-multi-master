@@ -2,7 +2,7 @@
   <ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
+<!--        <ion-menu-button></ion-menu-button>-->
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
@@ -10,9 +10,9 @@
     <ion-grid class="ion-padding-horizontal">
       <ion-row class="ion-padding-vertical">
         <ion-col size="9" class="ion-padding-vertical">
-          <h1 class="title">Sign In</h1>
+          <h1 class="title">Verificação</h1>
           <ion-text class="mb"
-            >Enter your email and password for signing in.</ion-text
+            >Verificação de usuário refente ao estado selecionado</ion-text
           >
         </ion-col>
       </ion-row>
@@ -22,66 +22,49 @@
         <ion-col>
           <form [formGroup]="loginForm" (ngSubmit)="signIn()">
             <ion-item lines="none" class="ion-no-padding">
+              <ion-label class="input-label"
+                         position="stacked">Estado
+              </ion-label>
+              <ion-select placeholder="Selecione o Estado"
+                          formControlName="estado">
+                <ng-container *ngFor="let estado of $estadoConfigService">
+                  <ion-select-option [value]="estado['ds_estado']">{{estado['ds_estado']}}</ion-select-option>
+                </ng-container>
+              </ion-select>
+            </ion-item>
+            <div class="errors-container" *ngIf="loginForm.get('estado').invalid && (loginForm.get('estado').dirty || loginForm.get('estado').touched)">
+              <ng-container *ngIf="loginForm.get('estado').errors.required">
+                estado é requerido
+              </ng-container>
+            </div>
+            <ion-item lines="none" class="ion-no-padding">
               <ion-label class="input-label" position="stacked"
-                >Email Address</ion-label
+                >CPF/CNPJ</ion-label
               >
               <ion-input
-                type="email"
-                formControlName="email"
+                type="text"
+                name="cpf"
+                formControlName="cpfAndCpnj"
+                maxlength="18"
+                [brmasker]="{person: true}"
               ></ion-input>
             </ion-item>
             <div
               class="errors-container"
-              *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)"
+              *ngIf="loginForm.get('cpfAndCpnj').invalid && (loginForm.get('cpfAndCpnj').dirty || loginForm.get('cpfAndCpnj').touched)"
             >
-              <ng-container *ngIf="loginForm.get('email').errors.required"
-                >Email is required</ng-container
-              >
-              <ng-container *ngIf="loginForm.get('email').errors.invalidEmail"
-                >Email is invalid</ng-container
-              >
+              <ng-container *ngIf="loginForm.get('cpfAndCpnj').errors.required"
+                >CPF ou CNPJ é requerido</ng-container>
             </div>
-            <ion-item lines="none" class="ion-no-padding">
-              <ion-label class="input-label" position="stacked">Password</ion-label
-              >
-              <ion-input
-                type="password"
-                formControlName="password"
-              ></ion-input>
-            </ion-item>
-            <div class="errors-container" *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
-                <ng-container *ngIf="loginForm.get('password').errors.required">
-                  Password is required
-                </ng-container>
-                <ng-container *ngIf="loginForm.get('password').errors.invalidPassword">
-                  {{loginForm.get('password').errors.message}}
-                </ng-container>
-              </div>
-            <ion-item lines="none" class="ion-no-padding mb">
-              <ion-label slot="start" class="caption">Enable Face ID</ion-label>
-              <ion-toggle
-                mode="ios"
-                slot="end"
-                color="primary"
-                formControlName="faceID"
-              ></ion-toggle>
-            </ion-item>
             <ion-button
               [disabled]="loginForm.invalid"
               class="action-button"
               expand="block"
               fill="solid"
-              color="primary"
-              type="submit"
-            >
-              <span>Get started</span>
+              type="submit">
+              <span>Verificar</span>
             </ion-button>
           </form>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="ion-text-center ion-padding-bottom">
-          <a class="link" [routerLink]="">Forgot password?</a>
         </ion-col>
       </ion-row>
     </ion-grid>

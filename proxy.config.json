@@ -1,0 +1,16 @@
+{
+  "/server-api/*": {
+    "target": "http://165.227.80.111:8085",
+    "secure": false,
+    "pathRewrite": {
+      "^/server-api" : ""
+    }
+  },
+  "/server/*": {
+    "target": "http://localhost:8080/horizon-menager-excel",
+    "secure": false,
+    "pathRewrite": {
+      "^/server" : ""
+    }
+  }
+}

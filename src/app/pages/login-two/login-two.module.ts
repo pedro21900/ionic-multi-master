@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginTwoPageRoutingModule } from './login-two-routing.module';
 
 import { LoginTwoPage } from './login-two.page';
+import {BrMaskerModule} from 'br-mask';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { LoginTwoPage } from './login-two.page';
     ReactiveFormsModule,
     IonicModule,
     LoginTwoPageRoutingModule,
+    BrMaskerModule,
   ],
   declarations: [LoginTwoPage]
 })

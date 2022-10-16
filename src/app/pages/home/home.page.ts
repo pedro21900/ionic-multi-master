@@ -10,7 +10,7 @@ export class HomePage implements OnInit {
   features = [
     {
       icon: 'phone-portrait-outline',
-      text: '30+ App Screens'
+      text: 'Sincronismo'
     },
     {
       icon: 'grid-outline',
