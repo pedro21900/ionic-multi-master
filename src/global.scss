@@ -10,7 +10,7 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+@import "@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
 @import "~@ionic/angular/css/normalize.css";
@@ -32,10 +32,10 @@
  * Swiper module styles
 */
 
-@import '~swiper/scss';
-@import '~swiper/scss/pagination';
-@import '~swiper/scss/navigation';
-@import '~@ionic/angular/css/ionic-swiper';
+@import 'swiper/scss';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/navigation';
+@import '@ionic/angular/css/ionic-swiper';
 
 /*
  * App CSS

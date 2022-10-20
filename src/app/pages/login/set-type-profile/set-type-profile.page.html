@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true" [ngStyle]="background" class="background-opts">
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <!--        <ion-menu-button></ion-menu-button>-->
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <div class="container">
+        <ion-grid class="ion-padding-horizontal">
+            <ion-row class="ion-padding-vertical">
+                <ion-col class="ion-padding-vertical" size="9">
+                    <h1 class="title">Modalidade</h1>
+                    <ion-text class="mb">
+                        Qual seu tipo de usuário?
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid class="ion-padding white">
+            <ion-row class="ion-padding-top">
+                <ion-col>
+                    <form (ngSubmit)="saveTypeProfile()" [formGroup]="typeProfileForm">
+                        <ion-radio-group formControlName="radioButton">
+                            <ion-list-header><b>Selecione a Modalidade</b></ion-list-header>
+                            <ion-item *ngFor="let typeProfile of typeProfiles" class="ion-no-padding" lines="none">
+                                <ion-label>{{typeProfile.type}}</ion-label>
+                                <ion-radio  [value]="typeProfile.value"></ion-radio>
+                            </ion-item>
+                        </ion-radio-group>
+                        <ion-button [disabled]="typeProfileForm.invalid"
+                                    class="action-button"
+                                    expand="block"
+                                    fill="solid"
+                                    type="submit">
+                            <span>Salvar</span>
+                        </ion-button>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

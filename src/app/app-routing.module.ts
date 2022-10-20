@@ -40,8 +40,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login-one/login-one.module').then( m => m.LoginOnePageModule)
   },
   {
-    path: 'login-two',
-    loadChildren: () => import('./pages/login-two/login-two.module').then( m => m.LoginTwoPageModule)
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'login-three',
@@ -80,16 +80,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/payments-two/payments-two.module').then( m => m.PaymentsTwoPageModule)
   },
   {
-    path: 'settings-one',
-    loadChildren: () => import('./pages/settings-one/settings-one.module').then( m => m.SettingsOnePageModule)
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings-.module').then(m => m.SettingsPageModule)
   },
   {
     path: 'settings-two',
     loadChildren: () => import('./pages/settings-two/settings-two.module').then( m => m.SettingsTwoPageModule)
-  },
-  {
-    path: 'settings-three',
-    loadChildren: () => import('./pages/settings-three/settings-three.module').then( m => m.SettingsThreePageModule)
   },
   {
     path: 'notifications-one',

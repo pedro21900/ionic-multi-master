@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Preferences} from '@capacitor/preferences';
+import {UserChecked} from '../../services/validate-pf-or-pj.service';
 
 @Component({
   selector: 'app-home',
@@ -7,32 +9,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
+  userChecked: UserChecked;
+  background = {
+    backgroundImage: 'url(../../../assets/img/home-background.jpg)'
+  };
+
   features = [
     {
       icon: 'phone-portrait-outline',
-      text: 'Sincronismo'
+      text: 'Baixar Propriedades',
+      routerLink: '/'
     },
     {
       icon: 'grid-outline',
-      text: '30+ Components'
+      text: 'Atualizar Passaporte',
+      routerLink: '/'
     },
     {
       icon: 'shapes-outline',
-      text: 'Vector based images'
+      text: 'Vector based images',
+      routerLink: '/'
     },
     {
       icon: 'build-outline',
-      text: 'Form validators'
+      text: 'Configurações',
+      routerLink: '/settings-three'
     },
     {
       icon: 'color-palette-outline',
-      text: 'Custom colors'
+      text: 'Custom colors',
+      routerLink: '/'
     }
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const userLogged = await Preferences.get({key: 'user'});
+    this.userChecked = JSON.parse(userLogged.value);
   }
 
 }

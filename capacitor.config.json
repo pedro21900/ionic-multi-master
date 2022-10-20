@@ -8,11 +8,15 @@
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0,
-      "launchAutoHide": false,
+      "launchAutoHide": true,
       "showSpinner": true,
       "splashFullScreen": true,
       "androidSplashResourceName": "splash"
     }
   },
-  "cordova": {}
+  "cordova": {
+    "preferences": {
+      "SimonsKey": true
+    }
+  }
 }

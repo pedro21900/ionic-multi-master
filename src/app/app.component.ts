@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Platform, MenuController } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import {SQLiteService} from './services/database-dump/sql-lite.service';
+import { SplashScreen } from '@capacitor/splash-screen'
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
         },
         {
           title: 'Image Background',
-          url: '/login-two',
+          url: '/login',
         },
         {
           title: 'Basic Form',
@@ -233,7 +233,7 @@ export class AppComponent implements OnInit {
       children: [
         {
           title: 'w/ Colour Icons',
-          url: '/settings-one',
+          url: '/settings',
         },
         {
           title: 'Basic Settings',
@@ -241,7 +241,7 @@ export class AppComponent implements OnInit {
         },
         {
           title: 'w/ Profile Header',
-          url: '/settings-three',
+          url: '/settings/profile',
         },
       ],
     },
@@ -249,17 +249,21 @@ export class AppComponent implements OnInit {
 
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
+
     private statusBar: StatusBar,
-    public menu: MenuController
+    public menu: MenuController,
+    private sqLiteService:SQLiteService
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
-    this.platform.ready().then(() => {
+    this.platform.ready().then(async () => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      await this.sqLiteService.initializePlugin().then(ret => {
+        console.log(`CapacitorSqlite está ${ret ? 'Ativo' : 'Inativo'}`);
+        this.sqLiteService.setupDatabase();
+      });
     });
   }
 

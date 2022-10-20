@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -42,9 +42,9 @@ export class ShoppingCartPage implements OnInit {
     total: 200.00
   };
 
-  couponForm: FormGroup;
+  couponForm: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit() {
     this.calcInvoice(this.order);

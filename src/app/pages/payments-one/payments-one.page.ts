@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl, ValidationErrors } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, AbstractControl, FormControl, ValidationErrors } from '@angular/forms';
 import { PickerController } from '@ionic/angular';
 import { Subject, Observable, Observer } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { creditCardType } from 'src/app/validators/credit-card.validator';
   styleUrls: ['./payments-one.page.scss'],
 })
 export class PaymentsOnePage implements OnInit, OnDestroy {
-  cardForm: FormGroup;
+  cardForm: UntypedFormGroup;
 
   typeCard = 'basic';
 
@@ -21,7 +21,7 @@ export class PaymentsOnePage implements OnInit, OnDestroy {
   unsubscribe$ = new Subject<void>();
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private pickerController: PickerController
   ) {}
 

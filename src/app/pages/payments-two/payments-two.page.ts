@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { PickerController } from '@ionic/angular';
@@ -14,7 +14,7 @@ import {
   styleUrls: ['./payments-two.page.scss'],
 })
 export class PaymentsTwoPage implements OnInit, OnDestroy {
-  cardForm: FormGroup;
+  cardForm: UntypedFormGroup;
   cardNumber = '0000';
   typeCard = 'basic';
   expires = '00/00';
@@ -23,7 +23,7 @@ export class PaymentsTwoPage implements OnInit, OnDestroy {
   unsubscribe$ = new Subject<void>();
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private pickerController: PickerController
   ) {}
 
