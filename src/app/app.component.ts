@@ -1,9 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Platform, MenuController } from '@ionic/angular';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {SQLiteService} from './services/database-dump/sql-lite.service';
-import { SplashScreen } from '@capacitor/splash-screen'
+import {MenuController, ModalController, Platform} from '@ionic/angular';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
+import {SQLiteService} from './services/sql-lite.service';
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
+import {Preferences} from '@capacitor/preferences';
+import {environment} from '../environments/environment';
+import {UserChecked} from './services/validate-pf-or-pj.service';
+import {Router} from '@angular/router';
+import {Network} from '@capacitor/network';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -248,11 +254,13 @@ export class AppComponent implements OnInit {
   ];
 
   constructor(
-    private platform: Platform,
-
-    private statusBar: StatusBar,
-    public menu: MenuController,
-    private sqLiteService:SQLiteService
+      private platform: Platform,
+      private splashScreen: SplashScreen,
+      private modalCtrl: ModalController,
+      private statusBar: StatusBar,
+      public menu: MenuController,
+      private sqLiteService: SQLiteService,
+      private router: Router
   ) {
     this.initializeApp();
   }
@@ -260,10 +268,9 @@ export class AppComponent implements OnInit {
   initializeApp() {
     this.platform.ready().then(async () => {
       this.statusBar.styleDefault();
-      await this.sqLiteService.initializePlugin().then(ret => {
-        console.log(`CapacitorSqlite está ${ret ? 'Ativo' : 'Inativo'}`);
-        this.sqLiteService.setupDatabase();
-      });
+      this.splashScreen.hide();
+      await this.initializeCapacitorSqlite();
+      await this.verifyFirstExec();
     });
   }
 
@@ -281,4 +288,32 @@ export class AppComponent implements OnInit {
     }
   }
 
+  async initializeCapacitorSqlite() {
+    await this.sqLiteService.initializePlugin().then(async ret => {
+      console.log(`CapacitorSqlite está ${ret ? 'Ativo' : 'Inativo'}`);
+      const dbSetupDone = await Preferences.get({key: 'db_name'});
+      if (!dbSetupDone.value) {
+        this.sqLiteService.downloadDatabase(false, `${environment.apiUrl}/consulta/estadosPassaporteEquestre`);
+      } else {
+        this.sqLiteService.dbConection('siapec3-pe');
+        this.sqLiteService.dbReady.next(true);
+      }
+    });
+  }
+
+  async verifyFirstExec() {
+    const user = await Preferences.get({key: 'user'});
+    const userLogged: UserChecked = JSON.parse(user.value);
+    const connectionNetwork:boolean =await this.checkConnectionNetwork(userLogged);
+    if ( userLogged == null && connectionNetwork)  this.router.navigate(['onboarding-two'], {replaceUrl: true});
+    else this.router.navigate(['home'], {replaceUrl: true});
+  }
+
+  private async checkConnectionNetwork(userLogged:UserChecked) :Promise<boolean>{
+    const statusNetwork = await Network.getStatus();
+    if(!statusNetwork.connected && userLogged==null) {
+      this.router.navigate(['empty-states'], { replaceUrl: true });
+      return false;
+    } return true;
+  }
 }

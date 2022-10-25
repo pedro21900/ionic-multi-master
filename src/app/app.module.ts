@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {ErrorHandlerException} from './@core/handlers/error-handler-exception';
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,8 @@ import {ErrorHandlerException} from './@core/handlers/error-handler-exception';
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [
     StatusBar,

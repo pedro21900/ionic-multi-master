@@ -8,8 +8,8 @@ import {LoginTwoPageRoutingModule} from './login-routing.module';
 
 import {LoginPage} from './login.page';
 import {BrMaskerModule} from 'br-mask';
-import {SetTypeProfilePage} from './set-type-profile/set-type-profile.page';
-import {LoginValidationPage} from './login-validation/login-validation-page.component';
+import {LoginSetTypeProfilePage} from './login-set-type-profile/login-set-type-profile.page';
+import {LoginValidationPage} from './login-validation/login-validation.page.';
 
 @NgModule({
     imports: [
@@ -20,7 +20,7 @@ import {LoginValidationPage} from './login-validation/login-validation-page.comp
         BrMaskerModule,
         FormsModule,
     ],
-    declarations: [SetTypeProfilePage, LoginValidationPage, LoginPage]
+    declarations: [LoginSetTypeProfilePage, LoginValidationPage, LoginPage]
 })
 export class LoginPageModule {
 }

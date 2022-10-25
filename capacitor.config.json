@@ -1,6 +1,6 @@
 {
   "appId": "com.mobilethemes.multi",
-  "appName": "Ionic Multi",
+  "appName": "Siapec3 Pe",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
@@ -8,15 +8,12 @@
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0,
-      "launchAutoHide": true,
+      "launchAutoHide": false,
       "showSpinner": true,
       "splashFullScreen": true,
       "androidSplashResourceName": "splash"
     }
   },
   "cordova": {
-    "preferences": {
-      "SimonsKey": true
-    }
   }
 }

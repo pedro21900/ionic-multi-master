@@ -1,65 +1,66 @@
 <ion-content [fullscreen]="true" class="background-opts" [ngStyle]="background">
-  <ion-header class="ion-no-border">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-<!--        <ion-menu-button></ion-menu-button>-->
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-  <div class="container">
-    <ion-grid class="ion-padding-horizontal">
-      <ion-row class="ion-padding-vertical">
-        <ion-col size="9" class="ion-padding-vertical">
-          <h1 class="title">Autenticação</h1>
-          <ion-text class="mb"
-            >Verificação de usuário refente ao estado selecionado</ion-text
-          >
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    <ion-grid class="ion-padding white">
-      <ion-row class="ion-no-padding">
-        <ion-col class="profile-header">
-          <ion-item lines="none">
-            <ion-thumbnail slot="start">
-              <img
-                      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-              />
-            </ion-thumbnail>
-            <ion-label class="ion-no-margin">
-              <h5>{{userChecked?.usuario?.dsNome}}</h5>
-              <p>CPF/CNPJ : {{userChecked?.usuario?.dsCpfCnpj}}</p>
-            </ion-label>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-padding-top">
-        <ion-col>
-          <form [formGroup]="loginForm" (ngSubmit)="signIn()">
-            <ion-item lines="none" class="ion-no-padding">
-              <ion-label class="input-label" position="stacked">Password</ion-label>
-              <ion-input type="password"
-                      formControlName="password">
-              </ion-input>
-            </ion-item>
-            <div class="errors-container" *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
-              <ng-container *ngIf="loginForm.get('password').errors.required">
-                Password is required
-              </ng-container>
-              <ng-container *ngIf="loginForm.get('password').errors.invalidPassword">
-                {{loginForm.get('password').errors.message}}
-              </ng-container>
-            </div>
-              <ion-button   [disabled]="loginForm.invalid"
-                      class="action-button"
-                      expand="block"
-                      fill="solid"
-                      type="submit">
-                <span>Login</span>
-              </ion-button>
-          </form>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <!--        <ion-menu-button></ion-menu-button>-->
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <div class="container">
+        <ion-grid class="ion-padding-horizontal">
+            <ion-row class="ion-padding-vertical">
+                <ion-col size="9" class="ion-padding-vertical">
+                    <h1 class="title">Autenticação</h1>
+                    <ion-text class="mb">
+                        Verifique seu usuário e digite a senha
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid class="ion-padding white">
+            <ion-row class="ion-no-padding">
+                <ion-col class="profile-header">
+                    <ion-item lines="none">
+                        <ion-thumbnail slot="start">
+                            <ion-avatar>
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"/>
+                            </ion-avatar>
+                        </ion-thumbnail>
+                        <ion-label class="ion-no-margin">
+                            <h5>{{userChecked?.usuario?.dsNome}}</h5>
+                            <p>CPF/CNPJ : {{userChecked?.usuario?.dsCpfCnpj}}</p>
+                        </ion-label>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row class="ion-padding-top">
+                <ion-col>
+                    <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+                        <ion-item lines="none" class="ion-no-padding">
+                            <ion-label class="input-label" position="stacked">Password</ion-label>
+                            <ion-input type="password"
+                                       formControlName="password">
+                            </ion-input>
+                        </ion-item>
+                        <div class="errors-container"
+                             *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                            <ng-container *ngIf="loginForm.get('password').errors.required">
+                                Password is required
+                            </ng-container>
+                            <ng-container *ngIf="loginForm.get('password').errors.invalidPassword">
+                                {{loginForm.get('password').errors.message}}
+                            </ng-container>
+                        </div>
+                        <ion-button [disabled]="loginForm.invalid"
+                                    class="action-button"
+                                    expand="block"
+                                    fill="solid"
+                                    type="submit">
+                            <span>Login</span>
+                        </ion-button>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>

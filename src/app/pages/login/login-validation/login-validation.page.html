@@ -1,0 +1,102 @@
+<ion-content [fullscreen]="true" class="background-opts" [ngStyle]="background">
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <!--        <ion-menu-button></ion-menu-button>-->
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <div class="container">
+        <ion-grid class="ion-padding-horizontal">
+            <ion-row class="ion-padding-vertical">
+                <ion-col size="9" class="ion-padding-vertical">
+                    <h1 class="title">Verificação</h1>
+                    <ion-text class="mb"
+                    >Verificação de usuário refente ao estado selecionado
+                    </ion-text
+                    >
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid class="ion-padding white">
+            <ion-row *ngIf="userChecked!=undefined" class="ion-no-padding">
+                <ion-col>
+                    <div class="profile">
+                        <ion-avatar>
+                            <img
+                                    alt=""
+                                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                                    srcset=""
+                            />
+                        </ion-avatar>
+                        <h4 class="ion-margin-vertical">Tina Turner</h4>
+                        <p>
+                            tina.turner@gmail.com
+                        </p>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row class="ion-padding-top">
+                <ion-col>
+                    <form (ngSubmit)="validation()" [formGroup]="loginForm">
+                        <ion-item class="ion-no-padding" lines="none">
+                            <ion-label class="input-label"
+                                       position="stacked">Estado
+                            </ion-label>
+                            <ion-select formControlName="estado"
+                                        placeholder="Selecione o Estado">
+                                <ng-container *ngFor="let estado of $serverResourceInformation | async">
+                                    <ion-select-option
+                                            [value]="estado">{{estado['ds_estado']}}</ion-select-option>
+                                </ng-container>
+                            </ion-select>
+                        </ion-item>
+                        <div class="errors-container"
+                             *ngIf="loginForm.get('cpfOrCnpj').value>0">
+                            Estado é requerido
+
+                        </div>
+                        <ion-item lines="none" class="ion-no-padding">
+                            <ion-label class="input-label" position="stacked">
+                                CPF/CNPJ
+                            </ion-label>
+                            <ion-input [brmasker]="{person: true}"
+                                       formControlName="cpfOrCnpj"
+                                       maxlength="18"
+                                       name="cpf"
+                                       type="tel">
+
+                            </ion-input>
+                        </ion-item>
+                        <div *ngIf="loginForm.get('cpfOrCnpj').invalid && (loginForm.get('cpfOrCnpj').dirty || loginForm.get('cpfOrCnpj').touched)"
+                             class="errors-container">
+                            <ng-container *ngIf="loginForm.get('cpfOrCnpj').errors.required"
+                            >CPF ou CNPJ é requerido
+                            </ng-container>
+                        </div>
+                        <ion-row style="margin-top: 20%">
+                            <ion-col>
+                                <ion-button class="action-button"
+                                            color="light"
+                                            expand="block"
+                                            fill="solid"
+                                            (click)="back()">
+                                    <span>Voltar</span>
+                                </ion-button>
+                            </ion-col>
+                            <ion-col>
+                                <ion-button [disabled]="loginForm.invalid"
+                                            class="action-button"
+                                            expand="block"
+                                            fill="solid"
+                                            type="submit">
+                                    <span>Verificar</span>
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

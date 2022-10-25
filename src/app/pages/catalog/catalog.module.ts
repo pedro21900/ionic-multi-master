@@ -7,15 +7,17 @@ import { CatalogPageRoutingModule } from './catalog-routing.module';
 import { CatalogPage } from './catalog.page';
 
 import { ComponentsModule } from 'src/app/components/components.module';
+import {BrMaskerModule} from 'br-mask';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CatalogPageRoutingModule,
-    ComponentsModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        CatalogPageRoutingModule,
+        ComponentsModule,
+        BrMaskerModule
+    ],
   declarations: [CatalogPage]
 })
 export class CatalogPageModule {}

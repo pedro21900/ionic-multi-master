@@ -73,6 +73,14 @@
                 }
               ]
             },
+            "alpha": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.alpha.ts"
+                }
+              ]
+            },
             "ci": {
               "progress": false
             }
@@ -88,6 +96,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "alpha": {
+              "browserTarget": "app:build:alpha"
             },
             "ci": {
             }

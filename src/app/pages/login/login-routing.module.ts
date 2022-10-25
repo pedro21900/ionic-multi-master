@@ -2,13 +2,13 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {LoginPage} from './login.page';
-import {SetTypeProfilePage} from './set-type-profile/set-type-profile.page';
-import {LoginValidationPage} from './login-validation/login-validation-page.component';
+import {LoginSetTypeProfilePage} from './login-set-type-profile/login-set-type-profile.page';
+import {LoginValidationPage} from './login-validation/login-validation.page.';
 
 const routes: Routes = [
   {
     path: '',
-    component: SetTypeProfilePage
+    component: LoginSetTypeProfilePage
   },
   {
     path: 'validation',

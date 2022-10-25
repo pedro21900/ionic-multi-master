@@ -1,16 +1,9 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 <ion-content [fullscreen]="true">
   <swiper [config]="config" class="ion-padding-horizontal ion-padding-bottom">
     <ng-template swiperSlide *ngFor="let item of data">
       <ion-card>
         <ion-card-header>
-          <img src="assets/onboarding/{{ item.image }}.svg" alt="" />
+          <img src="assets/onboarding/{{ item.image }}.png" alt="" />
         </ion-card-header>
         <ion-card-content>
           <ion-card-title>{{ item.title }}</ion-card-title>
@@ -27,7 +20,7 @@
     fill="solid"
     color="primary"
     type="button"
-  >
-    <span>Get started</span>
+    routerLink="/login">
+    <span>Começar</span>
   </ion-button>
 </ion-footer>

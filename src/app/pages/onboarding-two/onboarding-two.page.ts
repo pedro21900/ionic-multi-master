@@ -14,23 +14,17 @@ export class OnboardingTwoPage implements OnInit {
 
   data = [
     {
-      image: 'nature',
-      title: 'Explore the wonders of nature this summer',
+      image: 'wecome-slide-one',
+      title: 'Bem-vindo ao Siapec3 pe',
       description:
-        'Walk among those timeless wonders and feel all the power of nature',
+        'O SIAPEC3 Passaporte Equestre é uma solução desenvolvida para o controle da rastreabilidade equina.',
     },
     {
-      image: 'house',
-      title: 'Good neighboors, wide open areas to enjoy',
+      image: 'wecome-slide-two',
+      title: 'Facilitar',
       description:
-        'The place to live, grow and have a full life with your family around',
-    },
-    {
-      image: 'tower',
-      title: 'Travel around the world and enjoy life',
-      description:
-        'Travel around the world, know the history, the people and their customs',
-    },
+        'A Ferramenta que substitui uma série de documentos que precisavam ser apresentados pelos criadores e profissionais veterinários nas operações de movimentação de equídeos.',
+    }
   ];
 
   constructor() {}

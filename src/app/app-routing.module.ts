@@ -166,6 +166,10 @@ const routes: Routes = [
   {
     path: 'modal-subscribe',
     loadChildren: () => import('./pages/modal-subscribe/modal-subscribe.module').then( m => m.ModalSubscribePageModule)
+  },
+  {
+    path: 'splash-screen',
+    loadChildren: () => import('./pages/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
   }
 ];
 

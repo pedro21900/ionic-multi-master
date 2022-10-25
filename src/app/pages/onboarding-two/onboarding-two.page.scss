@@ -49,4 +49,13 @@ ion-card {
 
   ion-footer {
       min-height: 84px;
+    ion-button {
+      --background: #41A364;
+      --background-hover: #41A364;
+      --background-activated: #41A364;
+      --background-focused: #41A364;
+      --border-color: #41A364;
+    }
+
   }
+

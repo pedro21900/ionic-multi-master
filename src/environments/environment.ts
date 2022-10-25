@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  contextPath: '/server-api/',
+  apiUrl: 'https://www.smsgi.com.br/gsm_alpha/services/passaporteEquestre',
+  columnTbEstado:'ds_endereco_ws_des'
 };
 
 /*

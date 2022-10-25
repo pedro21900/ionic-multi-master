@@ -1,6 +1,6 @@
 {
   "/server-api/*": {
-    "target": "https://www.smsgi.com.br",
+    "target": "",
     "secure": false,
     "pathRewrite": {
       "^/server-api" : ""

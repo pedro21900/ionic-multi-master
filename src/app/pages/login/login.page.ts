@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
     userChecked: UserChecked;
 
     background = {
-        backgroundImage: 'url(../../../assets/img/splashbg.png)'
+        backgroundImage: 'url(../../../assets/login/horse.png)'
     };
 
     constructor(

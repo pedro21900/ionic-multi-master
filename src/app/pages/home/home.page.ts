@@ -11,14 +11,14 @@ export class HomePage implements OnInit {
 
   userChecked: UserChecked;
   background = {
-    backgroundImage: 'url(../../../assets/img/home-background.jpg)'
+    backgroundImage: 'url(../../../assets/img/home-background.png)'
   };
 
   features = [
     {
       icon: 'phone-portrait-outline',
       text: 'Baixar Propriedades',
-      routerLink: '/'
+      routerLink: '/catalog'
     },
     {
       icon: 'grid-outline',
