@@ -2,7 +2,7 @@ ion-menu-button {
   --color: #ffffff;
 }
 
-.background-opts {
+.header {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -14,7 +14,7 @@ ion-header ion-toolbar {
   --background: transparent;
 }
 
-.header-container {
+.header-user_container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

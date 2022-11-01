@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import { ModalArticlePageModule } from '../modal-article/modal-article.module';
 import { ModalConfirmationPageModule } from '../modal-confirmation/modal-confirmation.module';
 import { ModalLocationPageModule } from '../modal-location/modal-location.module';

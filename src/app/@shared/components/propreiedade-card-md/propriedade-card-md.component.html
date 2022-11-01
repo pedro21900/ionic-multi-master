@@ -1,0 +1,27 @@
+<ion-card>
+  <ion-card-content class="ion-no-padding">
+    <img [src]="data?.image" />
+    <div class="overlay">
+      <div class="top">
+        <div class="badge" *ngIf="data?.badge">{{ data?.badge }}</div>
+<!--        <ion-button-->
+<!--          fill="clear"-->
+<!--          size="small"-->
+<!--          shape="round"-->
+<!--          color="light"-->
+<!--          class="small-button"-->
+<!--        >-->
+<!--          <ion-icon slot="icon-only" name="heart-outline"></ion-icon>-->
+<!--        </ion-button>-->
+      </div>
+
+      <div class="content">
+        <p>Jurandir</p>
+        <span text-wrap>Scar</span>
+        <span text-wrap>MARITUBA</span>
+<!--        <span text-wrap>{{item.dsPelagem}}</span>-->
+        <span>{{ data?.price | currency }}</span>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>

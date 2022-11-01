@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ArticleTwoPageRoutingModule } from './article-two-routing.module';
 
 import { ArticleTwoPage } from './article-two.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import { UtilsModule } from 'src/app/utils/utils.module';
 
 @NgModule({

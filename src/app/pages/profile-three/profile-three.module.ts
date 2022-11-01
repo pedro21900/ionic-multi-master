@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ProfileThreePageRoutingModule } from './profile-three-routing.module';
 import { ProfileThreePage } from './profile-three.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 
 @NgModule({
   imports: [

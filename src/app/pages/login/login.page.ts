@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
-import {UserChecked, ValidatePfOrPj} from '../../services/validate-pf-or-pj.service';
+import {UserChecked, ValidatePfOrPjService} from '../../services/validate-pf-or-pj.service';
 import {Preferences} from '@capacitor/preferences';
 import {Router} from '@angular/router';
 
@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
 
     constructor(
         private formBuilder: UntypedFormBuilder,
-        private validatePfOrPj: ValidatePfOrPj,
+        private validatePfOrPj: ValidatePfOrPjService,
         private router: Router
     ) {
     }

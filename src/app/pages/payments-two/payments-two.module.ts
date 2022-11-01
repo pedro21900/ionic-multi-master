@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PaymentsTwoPageRoutingModule } from './payments-two-routing.module';
 
 import { PaymentsTwoPage } from './payments-two.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 
 @NgModule({
   imports: [

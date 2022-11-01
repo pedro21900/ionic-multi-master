@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProfileTwoPageRoutingModule } from './profile-two-routing.module';
 
 import { ProfileTwoPage } from './profile-two.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import { SwiperModule } from 'swiper/angular';
 
 @NgModule({

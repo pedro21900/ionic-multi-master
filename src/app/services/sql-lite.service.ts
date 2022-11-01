@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 
 import {
@@ -226,8 +226,9 @@ export class SQLiteService {
 
     // Potentially build this out to an update logic:
     // Sync your data on every app start and update the device DB
-    public async downloadDatabaseFromRequestParam(update = false,url:string,object:any) {
-        const dbImport = await this.http.post<JsonSQLite>(url,object).toPromise();
+    public async downloadDatabaseFromRequestParam(update = false,url:string,cpfCnpj:number) {
+        const params =new HttpParams().set('cpfCnpj',cpfCnpj)
+        const dbImport = await this.http.get<JsonSQLite>(url,{params}).toPromise();
         const jsonstring = JSON.stringify(dbImport);
         const isValid = await this.isJsonValid(jsonstring);
 

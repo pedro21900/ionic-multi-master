@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { EmptyStatesPageRoutingModule } from './empty-states-routing.module';
 import { EmptyStatesPage } from './empty-states.page';
-import { ComponentsModule } from '../../components/components.module';
+import { ComponentsModule } from '../../@shared/components/components.module';
 import { SwiperModule } from 'swiper/angular';
 
 @NgModule({

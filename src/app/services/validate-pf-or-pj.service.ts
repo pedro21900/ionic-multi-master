@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {environment} from '../../environments/environment';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import { Preferences} from '@capacitor/preferences';
 
 
 export class UserChecked {
@@ -17,16 +16,20 @@ export class UserChecked {
 @Injectable({
     providedIn: 'root'
 })
-export class ValidatePfOrPj {
+export class ValidatePfOrPjService {
 
-    API_RESOURCE: string = `https://smsgi.com.br/siapec3_1_des_rj/services/rest/passaporteEquestre/consultarUsuario/cpfCnpj/`;
+    API_RESOURCE: string = `rest/passaporteEquestre/consultarUsuario`;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient ) {
 
     }
 
-    checkCnpjOrCpfByInTipoUsuario(cpfOrCnpj: string, inTipoUsuario: string): Observable<UserChecked> {
-        return this.http.post<UserChecked>(this.API_RESOURCE, {dsCpfCnpj: cpfOrCnpj, inTipoUsuario: inTipoUsuario});
-    }
+     async checkCnpjOrCpfByInTipoUsuario(cpfOrCnpj: string, inTipoUsuario: string): Promise<UserChecked> {
+         const urlBase: string = (await Preferences.get({key: 'estadoApiResource'})).value;
+         const params =new HttpParams()
+             .set('cpfCnpj',cpfOrCnpj)
+             .set('inTipoUsuario',inTipoUsuario)
+         return this.http.get<UserChecked>(`${urlBase}${this.API_RESOURCE}`,{params}).toPromise();
+     }
 
 }

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { NotificationsOnePageRoutingModule } from './notifications-one-routing.module';
 
 import { NotificationsOnePage } from './notifications-one.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import { UtilsModule } from 'src/app/utils/utils.module';
 
 @NgModule({

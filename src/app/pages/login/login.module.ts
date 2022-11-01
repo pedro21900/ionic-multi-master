@@ -4,7 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {IonicModule} from '@ionic/angular';
 
-import {LoginTwoPageRoutingModule} from './login-routing.module';
+import {LoginPageRoutingModule} from './login-routing.module';
 
 import {LoginPage} from './login.page';
 import {BrMaskerModule} from 'br-mask';
@@ -16,7 +16,7 @@ import {LoginValidationPage} from './login-validation/login-validation.page.';
         CommonModule,
         ReactiveFormsModule,
         IonicModule,
-        LoginTwoPageRoutingModule,
+        LoginPageRoutingModule,
         BrMaskerModule,
         FormsModule,
     ],

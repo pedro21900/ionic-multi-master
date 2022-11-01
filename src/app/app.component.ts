@@ -260,7 +260,7 @@ export class AppComponent implements OnInit {
       private statusBar: StatusBar,
       public menu: MenuController,
       private sqLiteService: SQLiteService,
-      private router: Router
+      private router: Router,
   ) {
     this.initializeApp();
   }
@@ -306,7 +306,12 @@ export class AppComponent implements OnInit {
     const userLogged: UserChecked = JSON.parse(user.value);
     const connectionNetwork:boolean =await this.checkConnectionNetwork(userLogged);
     if ( userLogged == null && connectionNetwork)  this.router.navigate(['onboarding-two'], {replaceUrl: true});
-    else this.router.navigate(['home'], {replaceUrl: true});
+    else {
+      const urlBase: string = (await Preferences.get({key: 'estadoApiResource'})).value;
+      await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
+      await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/sincronismoInicial`);
+      this.router.navigate(['home'], {replaceUrl: true});
+    }
   }
 
   private async checkConnectionNetwork(userLogged:UserChecked) :Promise<boolean>{

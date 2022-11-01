@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { FilterPageRoutingModule } from './filter-routing.module';
 import { FilterPage } from './filter.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 
 @NgModule({
   imports: [

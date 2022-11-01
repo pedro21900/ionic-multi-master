@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { CatalogPageRoutingModule } from './catalog-routing.module';
 import { CatalogPage } from './catalog.page';
 
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import {BrMaskerModule} from 'br-mask';
 
 @NgModule({

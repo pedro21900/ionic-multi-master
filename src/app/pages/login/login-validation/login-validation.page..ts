@@ -1,12 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
-import {UserChecked, ValidatePfOrPj} from '../../../services/validate-pf-or-pj.service';
+import {UserChecked, ValidatePfOrPjService} from '../../../services/validate-pf-or-pj.service';
 import {Router} from '@angular/router';
 import {GetResult, Preferences} from '@capacitor/preferences';
 import {LoadingController, ModalController, NavController} from '@ionic/angular';
 import {from, Observable} from 'rxjs';
 import {ServerApiResourceProvider} from '../../../providers/server-api-resource.provider';
 import {ModalErrorPage} from '../../modal-error/modal-error-page.component';
+import {environment} from '../../../../environments/environment';
+import {SQLiteService} from '../../../services/sql-lite.service';
 
 @Component({
     selector: 'app-login-two',
@@ -26,12 +28,13 @@ export class LoginValidationPage implements OnInit {
 
     constructor(
         private formBuilder: UntypedFormBuilder,
-        private validatePfOrPj: ValidatePfOrPj,
+        private validatePfOrPj: ValidatePfOrPjService,
         public navCtrl: NavController,
         private router: Router,
         private loadingCtrl: LoadingController,
         private serverResourceInformation: ServerApiResourceProvider,
-        private modalController: ModalController
+        private modalController: ModalController,
+        private sqLiteService:SQLiteService
     ) {
     }
 
@@ -47,11 +50,14 @@ export class LoginValidationPage implements OnInit {
             const typeProfile: GetResult = await Preferences.get({key: 'typeProfile'});
             const cpfOrCnpj: string = this.loginForm.value.cpfOrCnpj.replace(/[^a-zA-Z0-9 ]/g, '');
             const loading = await this.loadingCtrl.create({ message: 'Validando....' });
+            const urlBase:string=this.loginForm.value.estado[environment.columnTbEstado];
+            await Preferences.set({key: 'estadoApiResource', value: urlBase});
+            this.sqLiteService.downloadDatabase(true, `${urlBase}rest/passaporteEquestre/gerarDatabase`);
             loading.present();
             //this.showLoading();
-            this.validatePfOrPj
-                .checkCnpjOrCpfByInTipoUsuario(cpfOrCnpj, typeProfile.value)
-                .subscribe(async userChecked => this.userRouter(userChecked));
+            from(this.validatePfOrPj
+                .checkCnpjOrCpfByInTipoUsuario(cpfOrCnpj, typeProfile.value))
+                .subscribe( userChecked => this.userRouter(userChecked));
 
         }
     }
@@ -59,7 +65,6 @@ export class LoginValidationPage implements OnInit {
     async userRouter(userChecked: UserChecked) {
         if (userChecked.codMsgResponse == 'MS0001') {
             await Preferences.set({key: 'user', value: JSON.stringify(userChecked)});
-            await Preferences.set({key: 'estadoApiResource', value: JSON.stringify(this.loginForm.value.estado)});
             this.loadingCtrl.dismiss();
             this.router.navigate(['/login', 'autentication']);
         } else {

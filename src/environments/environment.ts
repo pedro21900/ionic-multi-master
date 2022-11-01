@@ -2,6 +2,9 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import {GetResult, Preferences} from '@capacitor/preferences';
+import {ServerApiResource} from '../app/domain/server-api-resource';
+
 export const environment = {
   production: false,
   apiUrl: 'https://www.smsgi.com.br/gsm_alpha/services/passaporteEquestre',

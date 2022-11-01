@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ShoppingCartPageRoutingModule } from './shopping-cart-routing.module';
 import { ShoppingCartPage } from './shopping-cart.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 
 @NgModule({
   imports: [

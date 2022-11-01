@@ -15,7 +15,7 @@ export class CatalogPage implements OnInit {
 
     urlBase: string;
 
-    API_RESOURCE: string = `rest/passaporteEquestre/consultaExploracaoPecuariaEquideos/`;
+    API_RESOURCE: string = `rest/passaporteEquestre/consultaExploracaoPecuariaEquideos`;
 
     layout = 'grid';
 
@@ -82,10 +82,7 @@ export class CatalogPage implements OnInit {
 
     async keyUpEnter(cpfOrCnpj:string) {
         const cpfOrCnpjOnlyNumbers:number = parseInt(cpfOrCnpj.replace(/[^a-zA-Z0-9 ]/g, ''));
-        const serverResourceInformation: GetResult = await Preferences.get({key: 'estadoApiResource'});
-        const serverApiResource: ServerApiResource = JSON.parse(serverResourceInformation.value);
-        const urlBase: string = serverApiResource[environment.columnTbEstado];
+        const urlBase: string = (await Preferences.get({key: 'estadoApiResource'})).value;
         this.sqLiteService.downloadDatabaseFromRequestParam(false, `${urlBase}${this.API_RESOURCE}`, cpfOrCnpjOnlyNumbers);
-
     }
 }

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ArticleThreePageRoutingModule } from './article-three-routing.module';
 
 import { ArticleThreePage } from './article-three.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import { UtilsModule } from 'src/app/utils/utils.module';
 
 @NgModule({

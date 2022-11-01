@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FeedOnePageRoutingModule } from './feed-one-routing.module';
 
 import { FeedOnePage } from './feed-one.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import { UtilsModule } from 'src/app/utils/utils.module';
 
 @NgModule({

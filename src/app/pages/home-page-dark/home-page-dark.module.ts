@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageDarkPageRoutingModule } from './home-page-dark-routing.module';
 
 import { HomePageDarkPage } from './home-page-dark.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ComponentsModule } from 'src/app/@shared/components/components.module';
 import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
