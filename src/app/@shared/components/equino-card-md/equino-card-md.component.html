@@ -1,7 +1,6 @@
-<ion-card class="ion-activatable">
+<ion-card class="ion-activatable ripple-parent circle">
   <ion-card-content class="ion-no-padding">
-    <ion-ripple-effect></ion-ripple-effect>
-    <img [src]="data?.image" />
+    <img src="./assets/img/equino-card.jpg" />
     <div class="overlay">
       <div class="top">
         <div class="badge" *ngIf="data?.badge">Última modificação: 01/11/2022</div>
@@ -12,10 +11,10 @@
                 slot="start"
                 class="icon-list"></ion-icon>
       <ion-label class="ion-padding-end">
-        <p>{{ data?.text }}</p>
-        <p >17 anos </p>
-        <p >Baccet </p>
-        <p >Grossa </p>
+        <p>{{ data?.nome }}</p>
+        <p>{{ data?.especie }}</p>
+        <p>{{ data?.idade }}</p>
+        <p>{{ data?.raca }}</p>
       </ion-label>
     </ion-item>
     <ion-item lines="none">
@@ -23,8 +22,10 @@
                 slot="start"
                 class="icon-list"></ion-icon>
       <ion-label class="ion-padding-end">
-        <p>Validade  13/10/23</p>
+        <p>Validade: {{data?.validade | date:'dd/MM/yyyy' }}</p>
+        <p>Modificado em: {{data?.validade | date:'dd/MM/yyyy' }}</p>
       </ion-label>
     </ion-item>
   </ion-card-content>
+  <ion-ripple-effect></ion-ripple-effect>
 </ion-card>

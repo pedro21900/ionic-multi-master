@@ -48,7 +48,12 @@ img {
   object-fit: cover;
   width: 100% !important;
   height: 110px !important;
-  border-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 ion-card-content {

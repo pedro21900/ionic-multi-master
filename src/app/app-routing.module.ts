@@ -174,8 +174,11 @@ const routes: Routes = [
   {
     path: 'splash-screen',
     loadChildren: () => import('./pages/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
+  },
+  {
+    path: 'propriedade',
+    loadChildren: () => import('./pages/propriedade-list/propriedade.module').then( m => m.PropriedadeListPageModule)
   }
-
 ];
 
 @NgModule({

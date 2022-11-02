@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border" style="background: white; height: 39%">
+<ion-header  class="ion-no-border " style="height: 39%">
     <ion-grid class="ion-no-padding ion-no-margin header">
         <ion-row>
             <ion-col class="header-container">
@@ -68,7 +68,7 @@
     <ion-grid>
         <ion-row class="ion-no-padding">
             <ion-col size="12" *ngFor="let item of items" class="ion-no-padding">
-                <sm-equino-card-md [data]="item"></sm-equino-card-md>
+                <sm-equino-card-md [data]="item" (click)="edit(item.id)"></sm-equino-card-md>
             </ion-col>
         </ion-row>
     </ion-grid>

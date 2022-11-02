@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
     {
       icon: 'phone-portrait-outline',
       text: 'Baixar Propriedades',
-      routerLink: '/catalog'
+      routerLink: '/propriedade'
     },
     {
       icon: 'grid-outline',
