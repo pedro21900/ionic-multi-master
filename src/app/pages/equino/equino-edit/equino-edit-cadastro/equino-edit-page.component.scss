@@ -5,9 +5,6 @@ ion-searchbar {
     --color: var(--ion-color-medium);
 }
 
-card{
-  border-radius: 30px;
-}
 .section {
   --padding-start: 0;
   --inner-padding-end: 0;
@@ -211,4 +208,20 @@ ion-segment {
   ion-content {
     --background: transparent !important
   }
+}
+.input-label {
+  font-weight: 600;
+  color: #151522;
+  margin-bottom: 16px;
+}
+ion-card {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+ ion-card-content {
+
+  height: 100%;//your height of content here
+  overflow: scroll;
 }
