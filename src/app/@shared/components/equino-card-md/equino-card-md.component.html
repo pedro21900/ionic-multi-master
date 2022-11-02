@@ -1,0 +1,30 @@
+<ion-card class="ion-activatable">
+  <ion-card-content class="ion-no-padding">
+    <ion-ripple-effect></ion-ripple-effect>
+    <img [src]="data?.image" />
+    <div class="overlay">
+      <div class="top">
+        <div class="badge" *ngIf="data?.badge">Última modificação: 01/11/2022</div>
+      </div>
+    </div>
+    <ion-item>
+      <ion-icon name="information-circle-outline"
+                slot="start"
+                class="icon-list"></ion-icon>
+      <ion-label class="ion-padding-end">
+        <p>{{ data?.text }}</p>
+        <p >17 anos </p>
+        <p >Baccet </p>
+        <p >Grossa </p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon name="calendar"
+                slot="start"
+                class="icon-list"></ion-icon>
+      <ion-label class="ion-padding-end">
+        <p>Validade  13/10/23</p>
+      </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

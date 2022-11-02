@@ -108,6 +108,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/catalog/catalog.module').then( m => m.CatalogPageModule)
   },
   {
+    path: 'equino',
+    loadChildren: () => import('./pages/equino-list/equino-list.module').then( m => m.EquinoListPageModule)
+  },
+  {
     path: 'favorites',
     loadChildren: () => import('./pages/favorites/favorites.module').then( m => m.FavoritesPageModule)
   },

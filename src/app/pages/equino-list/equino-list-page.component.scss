@@ -1,14 +1,19 @@
-ion-menu-button {
-  --color: #ffffff;
-}
-.background-opts {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  box-shadow: inset 0 0 0 1000pt rgba(0, 0, 0, 0.3);
-  --background: transparent;
+ion-searchbar {
+    --box-shadow: 0 !important;
+    --border-radius: 8px;
+    --background: var(--ion-color-light);
+    --color: var(--ion-color-medium);
 }
 
+
+.section {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --background: transparent;
+  h5 {
+    margin: 0;
+  }
+}
 .header {
   background: #1ca678;
   border-radius: 0 0 30px 30px;
@@ -22,7 +27,7 @@ ion-menu-button {
 
   ion-toolbar {
     background: #35885a;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 30px 30px;
     --background: transparent;
   }
 
@@ -73,12 +78,10 @@ ion-menu-button {
     }
   }
 }
-
-
-
-
-
-
-
-
-
+.background-opts {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000pt rgba(0, 0, 0, 0.3);
+  --background: transparent;
+}

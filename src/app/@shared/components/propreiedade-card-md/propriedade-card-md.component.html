@@ -1,27 +1,44 @@
-<ion-card>
-  <ion-card-content class="ion-no-padding">
-    <img [src]="data?.image" />
-    <div class="overlay">
-      <div class="top">
-        <div class="badge" *ngIf="data?.badge">{{ data?.badge }}</div>
-<!--        <ion-button-->
-<!--          fill="clear"-->
-<!--          size="small"-->
-<!--          shape="round"-->
-<!--          color="light"-->
-<!--          class="small-button"-->
-<!--        >-->
-<!--          <ion-icon slot="icon-only" name="heart-outline"></ion-icon>-->
-<!--        </ion-button>-->
-      </div>
+<!--<ion-card>-->
+<!--  <ion-card-content class="ion-no-padding">-->
+<!--    <img [src]="data?.image" />-->
+<!--    <div class="overlay">-->
+<!--      <div class="top">-->
+<!--        <div class="badge" *ngIf="data?.badge">{{ data?.badge }}</div>-->
+<!--&lt;!&ndash;        <ion-button&ndash;&gt;-->
+<!--&lt;!&ndash;          fill="clear"&ndash;&gt;-->
+<!--&lt;!&ndash;          size="small"&ndash;&gt;-->
+<!--&lt;!&ndash;          shape="round"&ndash;&gt;-->
+<!--&lt;!&ndash;          color="light"&ndash;&gt;-->
+<!--&lt;!&ndash;          class="small-button"&ndash;&gt;-->
+<!--&lt;!&ndash;        >&ndash;&gt;-->
+<!--&lt;!&ndash;          <ion-icon slot="icon-only" name="heart-outline"></ion-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ion-button>&ndash;&gt;-->
+<!--      </div>-->
 
-      <div class="content">
-        <p>Jurandir</p>
-        <span text-wrap>Scar</span>
-        <span text-wrap>MARITUBA</span>
-<!--        <span text-wrap>{{item.dsPelagem}}</span>-->
-        <span>{{ data?.price | currency }}</span>
-      </div>
-    </div>
-  </ion-card-content>
+<!--      <div class="content">-->
+<!--        <p>Jurandir</p>-->
+<!--        <span text-wrap>Scar</span>-->
+<!--        <span text-wrap>MARITUBA</span>-->
+<!--&lt;!&ndash;        <span text-wrap>{{item.dsPelagem}}</span>&ndash;&gt;-->
+<!--        <span>{{ data?.price | currency }}</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </ion-card-content>-->
+<!--</ion-card>-->
+
+
+<ion-card class="ion-activatable custom-card" >
+  <div class="icon-hearder small">
+    <ion-icon name="accessibility-outline"></ion-icon>
+  </div>
+  <div class="field-entity">
+    <p type="title">SM SOLUÇÃO</p>
+    <p type="subtitle">Cantinho do peixe</p>
+    <p type="subtitle">Belém</p>
+  </div>
+
+  <ion-ripple-effect></ion-ripple-effect>
 </ion-card>
+
+
+

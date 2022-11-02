@@ -35,6 +35,7 @@ import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { SelectableBtnComponent } from './selectable-btn/selectable-btn.component';
 import { UtilsModule } from 'src/app/utils/utils.module';
 import {PropriedadeCardMdComponent} from './propreiedade-card-md/propriedade-card-md.component';
+import {EquinoCardMdComponent} from './equino-card-md/equino-card-md.component';
 
 @NgModule({
   declarations: [
@@ -70,10 +71,12 @@ import {PropriedadeCardMdComponent} from './propreiedade-card-md/propriedade-car
     NewsCardItemComponent,
     NewsGroupItemComponent,
     EmptyStateComponent,
-    SelectableBtnComponent
+    SelectableBtnComponent,
+    EquinoCardMdComponent
   ],
   imports: [CommonModule, UtilsModule, IonicModule.forRoot()],
   exports: [
+    EquinoCardMdComponent,
       PropriedadeCardMdComponent,
     FeedCardOneComponent,
     FeedCardTwoComponent,

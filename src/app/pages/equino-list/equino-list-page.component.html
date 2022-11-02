@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border" style="background: white; height: 39%">
+    <ion-grid class="ion-no-padding ion-no-margin header">
+        <ion-row>
+            <ion-col class="header-container">
+                <ion-header class="ion-no-border">
+                    <ion-toolbar>
+                        <ion-title>
+                            <img height="45px"
+                                 src="assets/img/siapec-name.png">
+                        </ion-title>
+                        <ion-buttons class="ion-activatable ripple-parent circle"
+                                     slot="end">
+                            <ion-ripple-effect></ion-ripple-effect>
+                            <ion-icon slot="icon-only"
+                                      name="ellipsis-vertical-outline"
+                                      routerLink="/settings"></ion-icon>
+                        </ion-buttons>
+                    </ion-toolbar>
+                </ion-header>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-padding">
+            <ion-col  class="ion-padding-vertical">
+                <ion-searchbar #ionSearchbar animated class="ion-no-padding"
+                               [brmasker]="{person: true}"
+                               type="tel"
+                               (keyup.enter)="keyUpEnter(ionSearchbar.value)"></ion-searchbar>
+            </ion-col>
+<!--            <ion-col class="ion-padding-vertical">-->
+<!--                <div>-->
+<!--                    <ion-button slot="end"-->
+<!--                                fill="clear"-->
+<!--                                size="small"-->
+<!--                                shape="round"-->
+<!--                                color="light"-->
+<!--                                class="small-button"-->
+<!--                                (click)="changeView('grid')">-->
+<!--                        <ion-icon slot="icon-only" name="grid-outline"></ion-icon>-->
+<!--                    </ion-button>-->
+<!--                    <ion-button slot="end"-->
+<!--                                fill="clear"-->
+<!--                                size="small"-->
+<!--                                shape="round"-->
+<!--                                color="light"-->
+<!--                                class="small-button"-->
+<!--                                (click)="changeView('grid')">-->
+<!--                        <ion-icon slot="icon-only" name="grid-outline"></ion-icon>-->
+<!--                    </ion-button>-->
+<!--                    <ion-button slot="end"-->
+<!--                                fill="clear"-->
+<!--                                size="small"-->
+<!--                                shape="round"-->
+<!--                                color="light"-->
+<!--                                class="small-button"-->
+<!--                                (click)="changeView('card')">-->
+<!--                        <ion-icon slot="icon-only" name="square-outline"></ion-icon>-->
+<!--                    </ion-button>-->
+<!--                </div>-->
+<!--            </ion-col>-->
+        </ion-row>
+
+    </ion-grid>
+
+    <sm-propriedade-card-md [data]="items[0]"></sm-propriedade-card-md>
+
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+    <ion-grid>
+        <ion-row class="ion-no-padding">
+            <ion-col size="12" *ngFor="let item of items" class="ion-no-padding">
+                <sm-equino-card-md [data]="item"></sm-equino-card-md>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

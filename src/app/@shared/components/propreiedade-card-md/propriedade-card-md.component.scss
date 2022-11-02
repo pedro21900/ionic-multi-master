@@ -1,5 +1,5 @@
 ion-card {
-  box-shadow: none !important;
+background: #b9e3b9;
 }
 
 .badge {
@@ -72,3 +72,83 @@ ion-card-content {
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.50);
   }
 }
+
+//Classe que gerência o estilo do custom-card
+.custom-card {
+  color: #000;
+  border-radius: 15px;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  //Classe que gerência o icon do custom-card
+  .icon-hearder {
+    background: var(--ion-color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    font-size: 54px;
+    color: #fff;
+    transition: all ease-in-out 270ms;
+    //Gerência tamanho do icon do custom-card
+    &.small {
+      width: 50px;
+      height: 50px;
+    }
+
+    &::ng-deep ion-icon[small] {
+      font-size: 30px;
+    }
+  }
+
+  //Onde o contúdo é guardado
+  .field-entity {
+    flex: 1;
+
+    &::ng-deep {
+      & > * {
+        margin: 5px 0;
+        display: block;
+      }
+      //Gerência o titulo passados pelo desenvolvedor.
+      & > *[type="title"] {
+        font-size: 1.2rem;
+        font-weight: 900;
+      }
+      //Gerência o subtitulo passados pelo desenvolvedor.
+      & > *[type="subtitle"] {
+        font-size: 1rem;
+        font-weight: 400;
+        opacity: 0.8;
+      }
+      //Gerência a informção passados pelo desenvolvedor.
+      & > *[type="info"] {
+        font-size: 1rem;
+        font-weight: 300;
+        opacity: 0.7;
+      }
+    }
+  }
+  //Onde o conteúdo a direita é guardado
+  .content-right-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    align-items: center;
+  }
+}
+
+//Classe do card padrão
+.default-card {
+  margin: 17px;
+  border-radius: 15px;
+}
+

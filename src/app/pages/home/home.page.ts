@@ -27,8 +27,8 @@ export class HomePage implements OnInit {
     },
     {
       icon: 'shapes-outline',
-      text: 'Vector based images',
-      routerLink: '/'
+      text: 'Equino',
+      routerLink: '/equino'
     },
     {
       icon: 'build-outline',
