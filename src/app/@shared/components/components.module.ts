@@ -34,12 +34,12 @@ import { NewsGroupItemComponent } from './news-group-item/news-group-item.compon
 import { EmptyStateComponent } from './empty-state/empty-state.component';
 import { SelectableBtnComponent } from './selectable-btn/selectable-btn.component';
 import { UtilsModule } from 'src/app/utils/utils.module';
-import {PropriedadeCardMdComponent} from './propreiedade-card-md/propriedade-card-md.component';
-import {EquinoCardMdComponent} from './equino-card-md/equino-card-md.component';
+import {PropriedadeCardMdComponent} from './propriedade-card-md/propriedade-card-md.component';
+import {EquinoCardLgComponent} from './equino-card-lg/equino-card-lg.component';
+import {PropriedadeCardLgComponent} from './propridade-card-lg/propriedade-card-lg.component';
 
 @NgModule({
   declarations: [
-      PropriedadeCardMdComponent,
     FeedCardOneComponent,
     FeedCardTwoComponent,
     FeedCardThreeComponent,
@@ -72,12 +72,15 @@ import {EquinoCardMdComponent} from './equino-card-md/equino-card-md.component';
     NewsGroupItemComponent,
     EmptyStateComponent,
     SelectableBtnComponent,
-    EquinoCardMdComponent
+    EquinoCardLgComponent,
+    PropriedadeCardMdComponent,
+    PropriedadeCardLgComponent
   ],
   imports: [CommonModule, UtilsModule, IonicModule.forRoot()],
   exports: [
-    EquinoCardMdComponent,
-      PropriedadeCardMdComponent,
+    EquinoCardLgComponent,
+    PropriedadeCardLgComponent,
+    PropriedadeCardMdComponent,
     FeedCardOneComponent,
     FeedCardTwoComponent,
     FeedCardThreeComponent,

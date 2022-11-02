@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { EquinoCardMdComponent } from './equino-card-md.component';
+import { EquinoCardLgComponent } from './equino-card-lg.component';
 
 describe('ProductCardMdComponent', () => {
-  let component: EquinoCardMdComponent;
-  let fixture: ComponentFixture<EquinoCardMdComponent>;
+  let component: EquinoCardLgComponent;
+  let fixture: ComponentFixture<EquinoCardLgComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ EquinoCardMdComponent ],
+      declarations: [ EquinoCardLgComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EquinoCardMdComponent);
+    fixture = TestBed.createComponent(EquinoCardLgComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
