@@ -6,7 +6,7 @@
                     <ion-toolbar>
                         <ion-title>
                             <img height="45px"
-                                 src="assets/img/siapec-name.png">
+                                 src="../../../../assets/img/siapec-name.png">
                         </ion-title>
                         <ion-buttons class="ion-activatable ripple-parent circle"
                                      slot="end">
@@ -68,8 +68,15 @@
     <ion-grid>
         <ion-row class="ion-no-padding">
             <ion-col size="12" *ngFor="let item of items" class="ion-no-padding">
-                <sm-equino-card-lg [data]="item" (click)="edit(item.id)"></sm-equino-card-lg>
+                <sm-equino-card-lg [data]="item" (onEditClick)="edit(item.id)"></sm-equino-card-lg>
             </ion-col>
         </ion-row>
     </ion-grid>
+    <ion-fab vertical="bottom"
+             horizontal="end"
+             slot="fixed">
+        <ion-fab-button (click)="create()">
+            <ion-icon name="add-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>

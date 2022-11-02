@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'sm-equino-card-lg',
@@ -8,6 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EquinoCardLgComponent implements OnInit {
 
   @Input() data: any;
+
+  @Output() onEditClick = new EventEmitter();
+
+  @Output() onDeleteClick = new EventEmitter();
 
   constructor() { }
 

@@ -86,7 +86,7 @@ ion-searchbar {
   --background: transparent;
 }
 :host {
-  background: url(../../../assets/img/home-background.png) no-repeat center center fixed;
+  background: url(../../../../assets/img/home-background.png) no-repeat center center fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -99,4 +99,11 @@ ion-searchbar {
   ion-content {
     --background: transparent !important
   }
+}
+ion-fab-button {
+  --background: #41A364;
+  --background-hover: #41A364;
+  --background-activated: #41A364;
+  --background-focused: #41A364;
+  --border-color: #41A364;
 }

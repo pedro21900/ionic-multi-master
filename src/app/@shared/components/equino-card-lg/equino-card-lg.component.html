@@ -1,9 +1,26 @@
 <ion-card class="ion-activatable ripple-parent circle">
   <ion-card-content class="ion-no-padding">
-    <img src="./assets/img/equino-card.jpg" />
+    <img src="./assets/img/equino-card.jpg"/>
     <div class="overlay">
       <div class="top">
-        <div class="badge" *ngIf="data?.badge">Última modificação: 01/11/2022</div>
+        <ion-buttons slot="end">
+          <ion-button fill="clear"
+                      size="small"
+                      shape="round"
+                      color="light"
+                      class="small-button"
+                      (click)="onEditClick.emit()">
+            <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear"
+                      size="small"
+                      shape="round"
+                      color="light"
+                      class="small-button"
+                      (click)="onDeleteClick.emit()">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </div>
     </div>
     <ion-item>

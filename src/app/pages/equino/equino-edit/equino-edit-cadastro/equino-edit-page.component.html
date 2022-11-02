@@ -1,0 +1,137 @@
+<ion-header  class="ion-no-border ">
+    <ion-grid class="ion-no-padding ion-no-margin header">
+        <ion-row>
+            <ion-col class="header-container">
+                <ion-header class="ion-no-border">
+                    <ion-toolbar>
+                        <ion-title>
+                            <img height="45px"
+                                 src="../../../../../assets/img/siapec-name.png">
+                        </ion-title>
+                        <ion-buttons class="ion-activatable ripple-parent circle"
+                                     slot="end">
+                            <ion-ripple-effect></ion-ripple-effect>
+                            <ion-icon slot="icon-only"
+                                      name="ellipsis-vertical-outline"
+                                      routerLink="/settings"></ion-icon>
+                        </ion-buttons>
+                    </ion-toolbar>
+                </ion-header>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div class="title-container ion-padding ion-activatable ripple-parent rectangle">
+                    <ion-ripple-effect></ion-ripple-effect>
+                    <ion-item lines="none"
+                              class="ion-no-padding"
+                              routerLink="/settings/profile">
+                        <ion-avatar slot="start">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"/>
+                        </ion-avatar>
+                        <ion-label>
+                            <h2 class="item-title">{{userChecked?.usuario?.dsNome}}</h2>
+                            <p class="item-subtitle">{{userChecked?.usuario?.dsNome}}</p>
+                        </ion-label>
+                    </ion-item>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-segment class="ion-padding" value="all">
+        <ion-segment-button value="all">
+            Cadastro
+        </ion-segment-button>
+        <ion-segment-button value="favorites">
+            Resenha
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card no-border
+              class="card">
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Telefone</ion-label>
+            <ion-input type="tel"
+                       [(ngModel)]="teste"
+                       class="input-text"></ion-input>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Orelhão próximo</ion-label>
+            <ion-input type="tel"
+                       [(ngModel)]="teste"
+                       class="input-text"></ion-input>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Telefone rural</ion-label>
+            <ion-input type="tel"
+                       [(ngModel)]="teste"
+                       class="input-text"></ion-input>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+        <div class="box-question">
+            <ion-label position="stacked"
+                       class="label-question">Outro (descrever)</ion-label>
+            <ion-textarea [(ngModel)]="teste"
+                          class="input-text"></ion-textarea>
+        </div>
+    </ion-card>
+</ion-content>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {EquinoPageModule} from './pages/equino/equino.module';
 
 const routes: Routes = [
   {
@@ -109,7 +110,7 @@ const routes: Routes = [
   },
   {
     path: 'equino',
-    loadChildren: () => import('./pages/equino-list/equino-list.module').then( m => m.EquinoListPageModule)
+    loadChildren: () => import('./pages/equino/equino.module').then(m => m.EquinoPageModule)
   },
   {
     path: 'favorites',

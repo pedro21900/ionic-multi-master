@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { Preferences} from '@capacitor/preferences';
-import {SQLiteService} from '../../services/sql-lite.service';
-import {UserChecked} from '../../services/validate-pf-or-pj.service';
+import {SQLiteService} from '../../../services/sql-lite.service';
+import {UserChecked} from '../../../services/validate-pf-or-pj.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-catalog',
@@ -78,7 +79,7 @@ export class EquinoListPage implements OnInit {
     ];
 
 
-    constructor(private sqLiteService: SQLiteService) {
+    constructor(private sqLiteService: SQLiteService,private router:Router) {
     }
 
     async ngOnInit() {
@@ -93,6 +94,9 @@ export class EquinoListPage implements OnInit {
     }
 
     edit(id: number) {
-
+        this.router.navigate(['/equino','edit',id])
+    }
+    create() {
+        this.router.navigate(['/equino','edit'])
     }
 }
