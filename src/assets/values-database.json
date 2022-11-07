@@ -1,0 +1,2492 @@
+{
+  "database": "siapec3-pe",
+  "version": 1,
+  "encrypted": false,
+  "mode": "partial",
+  "tables": [
+    {
+      "name": "tb_municipio",
+      "values": [
+        [
+          0,
+          1664958462,
+          3300225,
+          1,
+          "AREAL",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301801,
+          1,
+          "ENGENHEIRO PAULO DE FRONTIN",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305307,
+          1,
+          "SAO SEBASTIAO DO ALTO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300100,
+          1,
+          "ANGRA DOS REIS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3306206,
+          1,
+          "VASSOURAS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300233,
+          1,
+          "ARMACAO DOS BUZIOS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302908,
+          1,
+          "MIGUEL PEREIRA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301108,
+          1,
+          "CANTAGALO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302700,
+          1,
+          "MARICA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300456,
+          1,
+          "BELFORD ROXO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305752,
+          1,
+          "TANGUA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302502,
+          1,
+          "MAGE",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301405,
+          1,
+          "CONCEICAO DE MACABU",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303005,
+          1,
+          "MIRACEMA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303302,
+          1,
+          "NITEROI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302601,
+          1,
+          "MANGARATIBA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303807,
+          1,
+          "PARATI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302007,
+          1,
+          "ITAGUAI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302858,
+          1,
+          "MESQUITA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300209,
+          1,
+          "ARARUAMA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305158,
+          1,
+          "SAO JOSE DO VALE DO RIO PRETO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304904,
+          1,
+          "SAO GONCALO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304102,
+          1,
+          "PORCIUNCULA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304524,
+          1,
+          "RIO DAS OSTRAS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305208,
+          1,
+          "SAO PEDRO DA ALDEIA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305901,
+          1,
+          "TRAJANO DE MORAIS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301702,
+          1,
+          "DUQUE DE CAXIAS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300506,
+          1,
+          "BOM JARDIM",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305505,
+          1,
+          "SAQUAREMA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305802,
+          1,
+          "TERESOPOLIS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300951,
+          1,
+          "COMENDADOR LEVY GASPARIAN",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303856,
+          1,
+          "PATY DO ALFERES",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302809,
+          1,
+          "MENDES",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302452,
+          1,
+          "MACUCO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302254,
+          1,
+          "ITATIAIA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300605,
+          1,
+          "BOM JESUS DO ITABAPOANA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300936,
+          1,
+          "CARAPEBUS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301157,
+          1,
+          "CARDOSO MOREIRA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301306,
+          1,
+          "CASIMIRO DE ABREU",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302056,
+          1,
+          "ITALVA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303401,
+          1,
+          "NOVA FRIBURGO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304706,
+          1,
+          "SANTO ANTONIO DE PADUA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304805,
+          1,
+          "SAO FIDELIS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304755,
+          1,
+          "SAO FRANCISCO DE ITABAPOANA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305000,
+          1,
+          "SAO JOAO DA BARRA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305703,
+          1,
+          "SUMIDOURO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3306008,
+          1,
+          "TRES RIOS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3306156,
+          1,
+          "VARRESAI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304110,
+          1,
+          "PORTO REAL",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304003,
+          1,
+          "PIRAI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301207,
+          1,
+          "CARMO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301009,
+          1,
+          "CAMPOS DOS GOYTACAZES",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301504,
+          1,
+          "CORDEIRO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301603,
+          1,
+          "DUAS BARRAS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301900,
+          1,
+          "ITABORAI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304557,
+          1,
+          "RIO DE JANEIRO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302270,
+          1,
+          "JAPERI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303104,
+          1,
+          "NATIVIDADE",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303708,
+          1,
+          "PARAIBA DO SUL",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303906,
+          1,
+          "PETROPOLIS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304607,
+          1,
+          "SANTA MARIA MADALENA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305133,
+          1,
+          "SAO JOSE DE UBA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305406,
+          1,
+          "SAPUCAIA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300407,
+          1,
+          "BARRA MANSA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3306305,
+          1,
+          "VOLTA REDONDA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304128,
+          1,
+          "QUATIS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304508,
+          1,
+          "RIO DAS FLORES",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3306107,
+          1,
+          "VALENCA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300308,
+          1,
+          "BARRA DO PIRAI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304300,
+          1,
+          "RIO BONITO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304201,
+          1,
+          "RESENDE",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304409,
+          1,
+          "RIO CLARO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303955,
+          1,
+          "PINHEIRAL",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302205,
+          1,
+          "ITAPERUNA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302304,
+          1,
+          "LAJE DO MURIAE",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302403,
+          1,
+          "MACAE",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304151,
+          1,
+          "QUISSAMA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300258,
+          1,
+          "ARRAIAL DO CABO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300704,
+          1,
+          "CABO FRIO",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301876,
+          1,
+          "IGUABA GRANDE",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303203,
+          1,
+          "NILOPOLIS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305554,
+          1,
+          "SEROPEDICA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303500,
+          1,
+          "NOVA IGUACU",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3303609,
+          1,
+          "PARACAMBI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3304144,
+          1,
+          "QUEIMADOS",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305109,
+          1,
+          "SAO JOAO DE MERITI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300159,
+          1,
+          "APERIBE",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300902,
+          1,
+          "CAMBUCI",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3302106,
+          1,
+          "ITAOCARA",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3305604,
+          1,
+          "SILVA JARDIM",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3300803,
+          1,
+          "CACHOEIRAS DE MACACU",
+          "RJ"
+        ],
+        [
+          0,
+          1664958462,
+          3301850,
+          1,
+          "GUAPIMIRIM",
+          "RJ"
+        ]
+      ]
+    },
+    {
+      "name": "tb_pelagem",
+      "values": [
+        [
+          0,
+          1661769954,
+          3,
+          1,
+          "Alazã",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração vermelha, que pode variar do escuro ao amarelado. A crina e/ou cauda podem ser de tonalidade mais clara."
+        ],
+        [
+          0,
+          1661769954,
+          5,
+          1,
+          "Baia",
+          "Pêlos amarelos que variam do claro ao bronzeado na cabeça, pescoço e tronco, com crina, cauda e extremidades pretas."
+        ],
+        [
+          0,
+          1661769954,
+          1,
+          1,
+          "Branca",
+          "Exclusivamente pêlos brancos."
+        ],
+        [
+          0,
+          1661769954,
+          4,
+          1,
+          "Castanha",
+          "Pêlos da cabeça, pescoço, troncos, membros vermelhos, com crina, cauda e extremidades pretas."
+        ],
+        [
+          0,
+          1661769954,
+          8,
+          1,
+          "Lobuna",
+          "Caracterizada pela interpolação de pêlos amarelos e pretos. Estas duas tonalidades podem também estar presentes no mesmo pêlo. A pelagem lobuna é também caracterizada pelo predomínio de pelos pretos na cabeça. É comum o nascimento de potros que apresentavam a pelagem lobuna ao nascimento, e após a desmama os pêlos caem e estes animais passam a apresentar a pelagem preta maltinta."
+        ],
+        [
+          0,
+          1661769954,
+          11,
+          1,
+          "Pampa",
+          "É a conjugação de malhas brancas despigmentadas, bem delimitadas, em qualquer outra pelagem. A designação Pampa precede o nome da pelagem de fundo, se a proporção de malhas brancas for maior, ou deve vir depois do nome da pelagem de fundo, se as malhas brancas estiverem em menor proporção. Ocorre em muitas raças de equinos e pôneis. Em algumas raças como Paint Horse essa pelagem é designada Tobiana."
+        ],
+        [
+          0,
+          1661769954,
+          10,
+          1,
+          "Pêlo de Rato",
+          "Pêlos de tonalidade cinza com crina e cauda pretas, lembrando pêlo de rato. Encontrada nos asininos e muares."
+        ],
+        [
+          0,
+          1661769954,
+          2,
+          1,
+          "Preta",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração preta."
+        ],
+        [
+          0,
+          1661769954,
+          7,
+          1,
+          "Rosilha",
+          "Interpolação de pêlos brancos nas diversas pelagens. Esses pêlos são menos evidenciados na cabeça, normalmente a cabeça tem a cor sólida. Os potros podem apresentar pelagem uniforme no nascimento, mas quase sempre nascem rosilhos. A caracterização da pelagem rosilha deve ser feita pela denominação da pelagem de base acompanhada da palavra rosilha."
+        ],
+        [
+          0,
+          1661769954,
+          9,
+          1,
+          "Ruão",
+          "Interpolação de pêlos vermelhos, pretos e brancos. Encontrada nos asininos e muares. Os pêlos pretos podem estar presentes apenas nas regiões de crina e cauda."
+        ],
+        [
+          0,
+          1661769954,
+          12,
+          1,
+          "Tobiana, Oveira e Toveira",
+          "Tobiana: é a conjugação de malhas brancas despigmentadas, bem delimitadas, em qualquer outra pelagem. Nos pôneis e em outras raças de equinos são mais comumente chamadas de Pampa. Oveira: Composta de malhas despigmentação em fundo de qualquer pelagem. Essas malhas apresentam contorno irregular e não são bem delimitadas como as da pelagem pampa/tobiana pois podem se misturar com a pelagem de fundo. As áreas brancas incluem grande parte ou a totalidade da cabeça, podem atingir as faces laterais do pescoço, costados, ventre e flancos, porém nunca cruzam a região dorsal. Na maioria dos cavalos, a área pigmentada é mais extensa que a branca; e a cauda normalmente é unicolor. Toveira: A pelagem toveira é uma variedade da oveira, sendo uma mistura entre a pelagem oveira e a tobiana. Sua caracterização pode ser feita pela observação das malhas que são irregulares como na pelagem oveira e também grande parte da parte da cabeça do animal apresenta malha despigmentada (malacara) assim como acontece na pelagem oveira, porém as malhas do tronco ultrapassam a região dorsal e normalmente a área despigmentada é maior que a pigmentada."
+        ],
+        [
+          0,
+          1661769954,
+          6,
+          1,
+          "Tordilha",
+          "Interpolação de pêlos brancos em todo o corpo do animal. Todo equino de pelagem tordilha é produto de um acasalamento em que pelo menos um dos pais é também de pelagem tordilha."
+        ]
+      ]
+    },
+    {
+      "name": "tb_variedade_pelagem",
+      "values": [
+        [
+          0,
+          1661849705,
+          18,
+          1,
+          "Alazã"
+        ],
+        [
+          0,
+          1661849705,
+          4,
+          1,
+          "Amarilha / Palomina"
+        ],
+        [
+          0,
+          1661849705,
+          2,
+          1,
+          "Azeviche"
+        ],
+        [
+          0,
+          1661849705,
+          14,
+          1,
+          "Cardã"
+        ],
+        [
+          0,
+          1661849705,
+          19,
+          1,
+          "Castanha"
+        ],
+        [
+          0,
+          1661849705,
+          5,
+          1,
+          "Cereja"
+        ],
+        [
+          0,
+          1661849705,
+          8,
+          1,
+          "Clara"
+        ],
+        [
+          0,
+          1661849705,
+          13,
+          1,
+          "Encerada"
+        ],
+        [
+          0,
+          1661849705,
+          9,
+          1,
+          "Escura"
+        ],
+        [
+          0,
+          1661849705,
+          15,
+          1,
+          "Escura /Negra"
+        ],
+        [
+          0,
+          1661849705,
+          3,
+          1,
+          "Maltinto"
+        ],
+        [
+          0,
+          1661849705,
+          12,
+          1,
+          "Palha"
+        ],
+        [
+          0,
+          1661849705,
+          16,
+          1,
+          "Pedrês/Mosqueado"
+        ],
+        [
+          0,
+          1661849705,
+          10,
+          1,
+          "Pinhão"
+        ],
+        [
+          0,
+          1661849705,
+          1,
+          1,
+          "Pombo/Gázeo"
+        ],
+        [
+          0,
+          1661849705,
+          20,
+          1,
+          "Preta"
+        ],
+        [
+          0,
+          1661849705,
+          17,
+          1,
+          "Ruça"
+        ],
+        [
+          0,
+          1661849705,
+          6,
+          1,
+          "Sobre Baia"
+        ],
+        [
+          0,
+          1661849705,
+          7,
+          1,
+          "Tostada"
+        ],
+        [
+          0,
+          1661849705,
+          11,
+          1,
+          "Zaina"
+        ]
+      ]
+    },
+    {
+      "name": "tb_pelagem_variedade",
+      "values": [
+        [
+          0,
+          1661857586,
+          4,
+          1,
+          3,
+          4,
+          "Pelos de tonalidade amarela que pode variar da clara a escura com crina e cauda branca ou creme. Também chamada por algumas associações de Palomina ou Baia amarilha.",
+          "Alazã",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração vermelha, que pode variar do escuro ao amarelado. A crina e/ou cauda podem ser de tonalidade mais clara.",
+          "Amarilha / Palomina"
+        ],
+        [
+          0,
+          1661857586,
+          5,
+          1,
+          3,
+          5,
+          "Pelos com tonalidade vermelha lembrando cor da cereja.",
+          "Alazã",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração vermelha, que pode variar do escuro ao amarelado. A crina e/ou cauda podem ser de tonalidade mais clara.",
+          "Cereja"
+        ],
+        [
+          0,
+          1661857586,
+          8,
+          1,
+          3,
+          8,
+          "Cabeça, pescoço, troco e membros cobertos por pelos de tonalidade vermelha clara com pelos mais claros esparsos, distribuídos na crina, cauda e extremidade distal dos membros.",
+          "Alazã",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração vermelha, que pode variar do escuro ao amarelado. A crina e/ou cauda podem ser de tonalidade mais clara.",
+          "Clara"
+        ],
+        [
+          0,
+          1661857586,
+          6,
+          1,
+          3,
+          6,
+          "Cabeça, pescoço, tronco amarelos, com crina, cauda e extremidades avermelhadas.",
+          "Alazã",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração vermelha, que pode variar do escuro ao amarelado. A crina e/ou cauda podem ser de tonalidade mais clara.",
+          "Sobre Baia"
+        ],
+        [
+          0,
+          1661857586,
+          7,
+          1,
+          3,
+          7,
+          "Pelos do corpo, crina e cauda de tonalidade vermelha escura lembrando café torrado.",
+          "Alazã",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração vermelha, que pode variar do escuro ao amarelado. A crina e/ou cauda podem ser de tonalidade mais clara.",
+          "Tostada"
+        ],
+        [
+          0,
+          1661857586,
+          13,
+          1,
+          5,
+          8,
+          "Pelos amarelos de tonalidade clara com crina, cauda e os membros pretos, sendo que a canela não será totalmente clara preta pois terá pelos amarelos.",
+          "Baia",
+          "Pêlos amarelos que variam do claro ao bronzeado na cabeça, pescoço e tronco, com crina, cauda e extremidades pretas.",
+          "Clara"
+        ],
+        [
+          0,
+          1661857586,
+          15,
+          1,
+          5,
+          13,
+          "Pelos amarelos escuro lembrando cor de cera natural.",
+          "Baia",
+          "Pêlos amarelos que variam do claro ao bronzeado na cabeça, pescoço e tronco, com crina, cauda e extremidades pretas.",
+          "Encerada"
+        ],
+        [
+          0,
+          1661857586,
+          16,
+          1,
+          5,
+          9,
+          "A cabeça, o pescoço e o tronco apresentam a tonalidade amarela com intensa pigmentação. Crina, cauda e membros são pretos.",
+          "Baia",
+          "Pêlos amarelos que variam do claro ao bronzeado na cabeça, pescoço e tronco, com crina, cauda e extremidades pretas.",
+          "Escura"
+        ],
+        [
+          0,
+          1661857586,
+          14,
+          1,
+          5,
+          12,
+          "Pelos amarelos bem claros, lembrando a coloração da palha de milho.",
+          "Baia",
+          "Pêlos amarelos que variam do claro ao bronzeado na cabeça, pescoço e tronco, com crina, cauda e extremidades pretas.",
+          "Palha"
+        ],
+        [
+          0,
+          1661857586,
+          1,
+          1,
+          1,
+          1,
+          "Pelos brancos em pele com ausência quase total de pigmentação. Geralmente apenas os olhos se apresentam coloridos.",
+          "Branca",
+          "Exclusivamente pêlos brancos.",
+          "Pombo/Gázeo"
+        ],
+        [
+          0,
+          1661857586,
+          9,
+          1,
+          4,
+          8,
+          "O vermelho da pelagem é de tonalidade clara com crina, cauda e membros pretos sendo que a tonalidade preta dos membros normalmente não atinge toda a canela.",
+          "Castanha",
+          "Pêlos da cabeça, pescoço, troncos, membros vermelhos, com crina, cauda e extremidades pretas.",
+          "Clara"
+        ],
+        [
+          0,
+          1661857586,
+          10,
+          1,
+          4,
+          9,
+          "Pelos com tonalidade vermelho escuro com crina, cauda e extremidades pretas.",
+          "Castanha",
+          "Pêlos da cabeça, pescoço, troncos, membros vermelhos, com crina, cauda e extremidades pretas.",
+          "Escura"
+        ],
+        [
+          0,
+          1661857586,
+          11,
+          1,
+          4,
+          10,
+          "Pelagem vermelha bem escura, quase preta. Pode ser diferenciada da preta maltinta avaliando-se a cabeça, que na castanha pinhão tem predominância de pelos vermelhos e na preta maltinta é coberta por maioria de pelos pretos.",
+          "Castanha",
+          "Pêlos da cabeça, pescoço, troncos, membros vermelhos, com crina, cauda e extremidades pretas.",
+          "Pinhão"
+        ],
+        [
+          0,
+          1661857586,
+          12,
+          1,
+          4,
+          11,
+          "Pelagem castanha escura ou pinhão que não apresenta particularidades na cabeça e nos membros.",
+          "Castanha",
+          "Pêlos da cabeça, pescoço, troncos, membros vermelhos, com crina, cauda e extremidades pretas.",
+          "Zaina"
+        ],
+        [
+          0,
+          1661857586,
+          24,
+          1,
+          8,
+          8,
+          null,
+          "Lobuna",
+          "Caracterizada pela interpolação de pêlos amarelos e pretos. Estas duas tonalidades podem também estar presentes no mesmo pêlo. A pelagem lobuna é também caracterizada pelo predomínio de pelos pretos na cabeça. É comum o nascimento de potros que apresentavam a pelagem lobuna ao nascimento, e após a desmama os pêlos caem e estes animais passam a apresentar a pelagem preta maltinta.",
+          "Clara"
+        ],
+        [
+          0,
+          1661857586,
+          25,
+          1,
+          8,
+          9,
+          null,
+          "Lobuna",
+          "Caracterizada pela interpolação de pêlos amarelos e pretos. Estas duas tonalidades podem também estar presentes no mesmo pêlo. A pelagem lobuna é também caracterizada pelo predomínio de pelos pretos na cabeça. É comum o nascimento de potros que apresentavam a pelagem lobuna ao nascimento, e após a desmama os pêlos caem e estes animais passam a apresentar a pelagem preta maltinta.",
+          "Escura"
+        ],
+        [
+          0,
+          1661857586,
+          28,
+          1,
+          10,
+          8,
+          null,
+          "Pêlo de Rato",
+          "Pêlos de tonalidade cinza com crina e cauda pretas, lembrando pêlo de rato. Encontrada nos asininos e muares.",
+          "Clara"
+        ],
+        [
+          0,
+          1661857586,
+          29,
+          1,
+          10,
+          9,
+          null,
+          "Pêlo de Rato",
+          "Pêlos de tonalidade cinza com crina e cauda pretas, lembrando pêlo de rato. Encontrada nos asininos e muares.",
+          "Escura"
+        ],
+        [
+          0,
+          1661857586,
+          2,
+          1,
+          2,
+          2,
+          "Pelos pretos de tonalidade bem forte, que apresenta reflexos azulados.",
+          "Preta",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração preta.",
+          "Azeviche"
+        ],
+        [
+          0,
+          1661857586,
+          3,
+          1,
+          2,
+          3,
+          "Pelagem preta com reflexos avermelhados nas regiões dos flancos e axilas, mas a cabeça sempre predomínio de pelos pretos. Muitas vezes animais que apresentam pelagem preta nascem lobuno e se tonam pretos na desmama.",
+          "Preta",
+          "Pêlos da cabeça, pescoço, troncos, membros, crina e cauda na coloração preta.",
+          "Maltinto"
+        ],
+        [
+          0,
+          1661857586,
+          22,
+          1,
+          7,
+          18,
+          "Pelagem toda vermelha com interpolação de pelos brancos no pescoço e tronco.",
+          "Rosilha",
+          "Interpolação de pêlos brancos nas diversas pelagens. Esses pêlos são menos evidenciados na cabeça, normalmente a cabeça tem a cor sólida. Os potros podem apresentar pelagem uniforme no nascimento, mas quase sempre nascem rosilhos. A caracterização da pelagem rosilha deve ser feita pela denominação da pelagem de base acompanhada da palavra rosilha.",
+          "Alazã"
+        ],
+        [
+          0,
+          1661857586,
+          23,
+          1,
+          7,
+          19,
+          "Pelagem castanha com interpolação de pelos brancos no pescoço e tronco.",
+          "Rosilha",
+          "Interpolação de pêlos brancos nas diversas pelagens. Esses pêlos são menos evidenciados na cabeça, normalmente a cabeça tem a cor sólida. Os potros podem apresentar pelagem uniforme no nascimento, mas quase sempre nascem rosilhos. A caracterização da pelagem rosilha deve ser feita pela denominação da pelagem de base acompanhada da palavra rosilha.",
+          "Castanha"
+        ],
+        [
+          0,
+          1661857586,
+          26,
+          1,
+          9,
+          8,
+          null,
+          "Ruão",
+          "Interpolação de pêlos vermelhos, pretos e brancos. Encontrada nos asininos e muares. Os pêlos pretos podem estar presentes apenas nas regiões de crina e cauda.",
+          "Clara"
+        ],
+        [
+          0,
+          1661857586,
+          27,
+          1,
+          9,
+          9,
+          null,
+          "Ruão",
+          "Interpolação de pêlos vermelhos, pretos e brancos. Encontrada nos asininos e muares. Os pêlos pretos podem estar presentes apenas nas regiões de crina e cauda.",
+          "Escura"
+        ],
+        [
+          0,
+          1661857586,
+          17,
+          1,
+          6,
+          14,
+          "Pelagem tordilha que apresenta reflexos avermelhados ou amarelados. Comum naqueles animais que nasceram castanhos, alazões ou baios. É uma variedade transitória, pois acontece em uma das fases de clareamento dos animais.",
+          "Tordilha",
+          "Interpolação de pêlos brancos em todo o corpo do animal. Todo equino de pelagem tordilha é produto de um acasalamento em que pelo menos um dos pais é também de pelagem tordilha.",
+          "Cardã"
+        ],
+        [
+          0,
+          1661857586,
+          18,
+          1,
+          6,
+          8,
+          "Predomínio de pelos brancos na pelagem tordilha.",
+          "Tordilha",
+          "Interpolação de pêlos brancos em todo o corpo do animal. Todo equino de pelagem tordilha é produto de um acasalamento em que pelo menos um dos pais é também de pelagem tordilha.",
+          "Clara"
+        ],
+        [
+          0,
+          1661857586,
+          19,
+          1,
+          6,
+          15,
+          "Tordilho que apresenta pelagem preta com poucos pelos brancos. Acontece no início do clareamento.",
+          "Tordilha",
+          "Interpolação de pêlos brancos em todo o corpo do animal. Todo equino de pelagem tordilha é produto de um acasalamento em que pelo menos um dos pais é também de pelagem tordilha.",
+          "Escura /Negra"
+        ],
+        [
+          0,
+          1661857586,
+          20,
+          1,
+          6,
+          16,
+          "Quando os pelos vermelhos ou pretos formam pequenos tufos no fundo branco.",
+          "Tordilha",
+          "Interpolação de pêlos brancos em todo o corpo do animal. Todo equino de pelagem tordilha é produto de um acasalamento em que pelo menos um dos pais é também de pelagem tordilha.",
+          "Pedrês/Mosqueado"
+        ],
+        [
+          0,
+          1661857586,
+          21,
+          1,
+          6,
+          17,
+          "Quando não mais se observar no tordilho os pelos pretos da pelagem de origem. O animal terá o corpo recoberto por pelos brancos e sua pele será excessivamente pigmentada nas extremidades, em virtude da migração do pigmento melânico que se acumula nessas regiões.",
+          "Tordilha",
+          "Interpolação de pêlos brancos em todo o corpo do animal. Todo equino de pelagem tordilha é produto de um acasalamento em que pelo menos um dos pais é também de pelagem tordilha.",
+          "Ruça"
+        ]
+      ]
+    },
+    {
+      "name": "tb_particularidade_categoria",
+      "values": [
+        [
+          0,
+          1661937698,
+          1,
+          1,
+          "Cabeça",
+          "cabeca",
+          "0vh",
+          "55vh"
+        ],
+        [
+          0,
+          1661937698,
+          2,
+          1,
+          "Focinho",
+          "focinho",
+          "55vh",
+          "55vh"
+        ],
+        [
+          0,
+          1661937698,
+          5,
+          1,
+          "Lateral Direita",
+          "lateral_direita",
+          "60vh",
+          "55vh"
+        ],
+        [
+          0,
+          1661937698,
+          4,
+          1,
+          "Lateral Esquerda",
+          "lateral_esquerda",
+          "60vh",
+          "55vh"
+        ],
+        [
+          0,
+          1661937698,
+          6,
+          1,
+          "Membros Anteriores",
+          "membros_anteriores",
+          "55vh",
+          "55vh"
+        ],
+        [
+          0,
+          1661937698,
+          7,
+          1,
+          "Membros Posteriores",
+          "membros_posteriores",
+          "55vh",
+          "55vh"
+        ],
+        [
+          0,
+          1661937698,
+          3,
+          1,
+          "Pescoço",
+          "pescoco",
+          "55vh",
+          "55vh"
+        ]
+      ]
+    },
+    {
+      "name": "tb_especie",
+      "values": [
+        [
+          0,
+          1651826575,
+          18,
+          1,
+          "Equideos (Asinina)",
+          4
+        ],
+        [
+          0,
+          1652861836,
+          19,
+          1,
+          "Equideos (Equino)",
+          4
+        ],
+        [
+          0,
+          1651826575,
+          20,
+          1,
+          "Equideos (Muar)",
+          4
+        ]
+      ]
+    },
+    {
+      "name": "tb_raca",
+      "values": [
+        [
+          0,
+          1552714603,
+          299,
+          1,
+          "2059",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          217,
+          1,
+          "32323506749",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          298,
+          1,
+          "53516",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          297,
+          1,
+          "53819748768",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          324,
+          1,
+          "ANDALUSIA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          271,
+          1,
+          "ANDALUSIA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          258,
+          1,
+          "ANDALUZ",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          314,
+          1,
+          "ANDALUZ",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          257,
+          1,
+          "ANGLO ÁRABE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          329,
+          1,
+          "ANGLO ÁRABE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          331,
+          1,
+          "APPALOOSA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          255,
+          1,
+          "APPALOOSA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          309,
+          1,
+          "ÁRABE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          256,
+          1,
+          "ÁRABE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          273,
+          1,
+          "BOURBONNAIS",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          347,
+          1,
+          "BOURBONNAIS",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          215,
+          1,
+          "BRASILEIRO DE HIPISMO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          259,
+          1,
+          "BRETÃO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          346,
+          1,
+          "BRETÃO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          208,
+          1,
+          "CAMPOLINA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          305,
+          1,
+          "CAMPOLINA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          336,
+          1,
+          "CATALÃO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          272,
+          1,
+          "CATALÃO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          312,
+          1,
+          "COTENTIN",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          274,
+          1,
+          "COTENTIN",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          218,
+          1,
+          "CRIOULO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          345,
+          1,
+          "CRIOULO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          303,
+          1,
+          "FABIO JOSÉ WERMELINGER",
+          20,
+          "Equideos (Muar)"
+        ],
+        [
+          0,
+          1552714603,
+          260,
+          1,
+          "FRIESIAN",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          311,
+          1,
+          "FRIESIAN",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          261,
+          1,
+          "GYPSY COB",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          328,
+          1,
+          "GYPSY COB",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          348,
+          1,
+          "HAFLINGER",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          262,
+          1,
+          "HAFLINGER",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          214,
+          1,
+          "HOLSTEINER",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          307,
+          1,
+          "HOLSTEINER",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          275,
+          1,
+          "INDIANO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          341,
+          1,
+          "INDIANO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          313,
+          1,
+          "IRLANDES",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          276,
+          1,
+          "IRLANDES",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          291,
+          1,
+          "ITALIANA (AMIATA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          334,
+          1,
+          "ITALIANA (AMIATA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          339,
+          1,
+          "ITALIANA (ASINARA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          292,
+          1,
+          "ITALIANA (ASINARA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          293,
+          1,
+          "ITALIANA (GRIGIO SICILIANO)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          333,
+          1,
+          "ITALIANA (GRIGIO SICILIANO)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          294,
+          1,
+          "ITALIANA (MARTINA FRANCA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          327,
+          1,
+          "ITALIANA (MARTINA FRANCA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          316,
+          1,
+          "ITALIANA (PANTELLERIA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          290,
+          1,
+          "ITALIANA (PANTELLERIA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          304,
+          1,
+          "ITALIANA (RAGUSANO)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          289,
+          1,
+          "ITALIANA (RAGUSANO)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          288,
+          1,
+          "ITALIANA (ROMAGNOLO)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          318,
+          1,
+          "ITALIANA (ROMAGNOLO)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          338,
+          1,
+          "ITALIANA (SARDA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          287,
+          1,
+          "ITALIANA (SARDA)",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          349,
+          1,
+          "LUSITANO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          263,
+          1,
+          "LUSITANO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          321,
+          1,
+          "MAIORCA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          277,
+          1,
+          "MAIORCA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          344,
+          1,
+          "MAMMOTH AMERICANO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          278,
+          1,
+          "MAMMOTH AMERICANO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          264,
+          1,
+          "MANGALARGA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          343,
+          1,
+          "MANGALARGA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          207,
+          1,
+          "MANGALARGA MARCHADOR",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          310,
+          1,
+          "MANGALARGA MARCHADOR",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          355,
+          1,
+          "MANGOLINA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          265,
+          1,
+          "MANGOLINA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          325,
+          1,
+          "MESTIÇO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          209,
+          1,
+          "MESTIÇO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          342,
+          1,
+          "MIRANDA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          279,
+          1,
+          "MIRANDA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          322,
+          1,
+          "MORGAN",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          266,
+          1,
+          "MORGAN",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          357,
+          1,
+          "NERO DE BERRY",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          280,
+          1,
+          "NERO DE BERRY",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          281,
+          1,
+          "NORMANNO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          332,
+          1,
+          "NORMANNO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          319,
+          1,
+          "PAINT HORSE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          267,
+          1,
+          "PAINT HORSE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          356,
+          1,
+          "PAMPA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          219,
+          1,
+          "PAMPA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          268,
+          1,
+          "PANTANEIRO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          340,
+          1,
+          "PANTANEIRO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          354,
+          1,
+          "PEGA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          205,
+          1,
+          "PÊGA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          283,
+          1,
+          "PÊGA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          284,
+          1,
+          "PIRENEU",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          326,
+          1,
+          "PIRENEU",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          337,
+          1,
+          "POITOU",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          282,
+          1,
+          "POITOU",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552720102,
+          320,
+          1,
+          "PONEI",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          269,
+          1,
+          "PÔNEI",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          308,
+          1,
+          "PROVENZA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          285,
+          1,
+          "PROVENZA",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          213,
+          1,
+          "PSI",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          315,
+          1,
+          "PSI",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          317,
+          1,
+          "PURO SANGUE ÁRABE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          295,
+          1,
+          "PURO SANGUE ÁRABE",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          296,
+          1,
+          "PURO SANGUE LUSITANO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          335,
+          1,
+          "PURO SANGUE LUSITANO",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          323,
+          1,
+          "QUARTO DE MILHA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          206,
+          1,
+          "QUARTO DE MILHA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          222,
+          1,
+          "SELA BELGA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          353,
+          1,
+          "SELA BELGA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          270,
+          1,
+          "SELA FRANCESA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          330,
+          1,
+          "SELA FRANCESA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          223,
+          1,
+          "SELA HOLANDESA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          350,
+          1,
+          "SELA HOLANDESA",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          352,
+          1,
+          "SRD",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552714603,
+          224,
+          1,
+          "SRD",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          351,
+          1,
+          "ZAMONARO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          286,
+          1,
+          "ZAMONARO",
+          18,
+          "Equideos (Asinina)"
+        ],
+        [
+          0,
+          1552714603,
+          216,
+          1,
+          "ZANGERSHEID",
+          19,
+          "Equideos (Equino)"
+        ],
+        [
+          0,
+          1552720102,
+          306,
+          1,
+          "ZANGERSHEID",
+          18,
+          "Equideos (Asinina)"
+        ]
+      ]
+    }
+  ]
+}

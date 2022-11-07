@@ -22,53 +22,23 @@
         <ion-row class="ion-padding">
             <ion-col  class="ion-padding-vertical">
                 <ion-searchbar #ionSearchbar animated class="ion-no-padding"
-                               [brmasker]="{person: true}"
-                               type="tel"
+                               type="text"
                                (keyup.enter)="keyUpEnter(ionSearchbar.value)"></ion-searchbar>
             </ion-col>
-<!--            <ion-col class="ion-padding-vertical">-->
-<!--                <div>-->
-<!--                    <ion-button slot="end"-->
-<!--                                fill="clear"-->
-<!--                                size="small"-->
-<!--                                shape="round"-->
-<!--                                color="light"-->
-<!--                                class="small-button"-->
-<!--                                (click)="changeView('grid')">-->
-<!--                        <ion-icon slot="icon-only" name="grid-outline"></ion-icon>-->
-<!--                    </ion-button>-->
-<!--                    <ion-button slot="end"-->
-<!--                                fill="clear"-->
-<!--                                size="small"-->
-<!--                                shape="round"-->
-<!--                                color="light"-->
-<!--                                class="small-button"-->
-<!--                                (click)="changeView('grid')">-->
-<!--                        <ion-icon slot="icon-only" name="grid-outline"></ion-icon>-->
-<!--                    </ion-button>-->
-<!--                    <ion-button slot="end"-->
-<!--                                fill="clear"-->
-<!--                                size="small"-->
-<!--                                shape="round"-->
-<!--                                color="light"-->
-<!--                                class="small-button"-->
-<!--                                (click)="changeView('card')">-->
-<!--                        <ion-icon slot="icon-only" name="square-outline"></ion-icon>-->
-<!--                    </ion-button>-->
-<!--                </div>-->
-<!--            </ion-col>-->
         </ion-row>
 
     </ion-grid>
 
-    <sm-propriedade-card-md [data]="items[0]"></sm-propriedade-card-md>
+    <sm-propriedade-card-md [data]="exploracaoPecuariaEquideo"></sm-propriedade-card-md>
 
 </ion-header>
 <ion-content [fullscreen]="true" class="ion-padding-horizontal">
     <ion-grid>
         <ion-row class="ion-no-padding">
-            <ion-col size="12" *ngFor="let item of items" class="ion-no-padding">
-                <sm-equino-card-lg [data]="item" (onEditClick)="edit(item.id)"></sm-equino-card-lg>
+            <ion-col size="12" *ngFor="let item of $equinos | async" class="ion-no-padding">
+                <sm-equino-card-lg [data]="item"
+                                   (onEditClick)="edit(item.id)"
+                                   (onDeleteClick)="delete(item.id)"></sm-equino-card-lg>
             </ion-col>
         </ion-row>
     </ion-grid>

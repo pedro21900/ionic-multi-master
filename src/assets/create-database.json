@@ -1,0 +1,819 @@
+{
+  "database": "siapec3-pe",
+  "version": 1,
+  "encrypted": false,
+  "mode": "partial",
+  "tables": [
+    {
+      "name": "tb_municipio",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_municipio",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "ds_uf",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_municipio_on_last_modified",
+          "value": "last_modified DESC"
+        }
+      ]
+    },
+    {
+      "name": "tb_pelagem",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_pelagem",
+          "value": "VARCHAR(50) NOT NULL"
+        },
+        {
+          "column": "ds_caracteristicas",
+          "value": "TEXT"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_pelagem_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_pelagem_on_ds_pelagem_ds_estado",
+          "value": "ds_pelagem ASC, cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    },
+    {
+      "name": "tb_variedade_pelagem",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_variedade_pelagem",
+          "value": "VARCHAR (50) NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_variedade_pelagem_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_variedade_pelagem_on_ds_variedade_pelagem_cd_estado",
+          "value": "ds_variedade_pelagem ASC,cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    },
+    {
+      "name": "tb_pelagem_variedade",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_pelagem",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_variedade_pelagem",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_caracteristicas_pelagem_variedade",
+          "value": "TEXT"
+        },
+        {
+          "column": "ds_pelagem",
+          "value": "TEXT"
+        },
+        {
+          "column": "ds_caracteristicas_pelagem",
+          "value": "TEXT"
+        },
+        {
+          "column": "ds_variedade_pelagem",
+          "value": "TEXT"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_pelagem_variedade_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_pelagem_variedade_on_cd_pelagem_cd_variedade_pelagem_cd_estado",
+          "value": "cd_pelagem ASC ,cd_variedade_pelagem,cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    },
+    {
+      "name": "tb_particularidade_categoria",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_particularidade_categoria",
+          "value": "VARCHAR(50) NOT NULL"
+        },
+        {
+          "column": "ds_diretorio_imagem",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "ds_width",
+          "value": "VARCHAR(15) NOT NULL"
+        },
+        {
+          "column": "ds_height",
+          "value": "VARCHAR(15) NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_particularidade_categoria_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_particularidade_categoria_on_ds_particularidade_categoria_cd_estado",
+          "value": "ds_particularidade_categoria ASC,cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    },
+    {
+      "name": "tb_particularidade",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_particularidade",
+          "value": "VARCHAR(50) NOT NULL"
+        },
+        {
+          "column": "cd_particularidade_categoria",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_diretorio_imagem",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "ds_width",
+          "value": "VARCHAR(15) NOT NULL"
+        },
+        {
+          "column": "ds_height",
+          "value": "VARCHAR(15) NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_particularidade_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_particularidade_on_ds_particularidade_cd_particularidade_categoria_cd_estado",
+          "value": "ds_particularidade ASC,cd_particularidade_categoria,cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    },
+    {
+      "name": "tb_laboratorio_exame",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_cnpj",
+          "value": "VARCHAR(14) NOT NULL"
+        },
+        {
+          "column": "ds_razao_social",
+          "value": "VARCHAR(150) NOT NULL"
+        },
+        {
+          "column": "ds_nome_fantasia",
+          "value": "VARCHAR(150)"
+        },
+        {
+          "column": "ds_inscricao_estadual",
+          "value": "VARCHAR(20)"
+        },
+        {
+          "column": "ds_bairro",
+          "value": "VARCHAR(50)"
+        },
+        {
+          "column": "ds_cep",
+          "value": "VARCHAR(8)"
+        },
+        {
+          "column": "ds_endereco",
+          "value": "VARCHAR(100) NOT NULL"
+        },
+        {
+          "column": "ds_numero",
+          "value": "VARCHAR(6)"
+        },
+        {
+          "column": "ds_complemento",
+          "value": "VARCHAR(100)"
+        },
+        {
+          "column": "ds_telefone",
+          "value": "VARCHAR(20)"
+        },
+        {
+          "column": "ds_email",
+          "value": "VARCHAR(100)"
+        },
+        {
+          "column": "in_tipo_endereco",
+          "value": "VARCHAR(2)"
+        },
+        {
+          "column": "ds_celular",
+          "value": "VARCHAR(15)"
+        },
+        {
+          "column": "ds_fax",
+          "value": "VARCHAR (15)"
+        },
+        {
+          "column": "cd_municipio",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_laboratorio_exame_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_laboratorio_exame_on_ds_cnpj_cd_estado",
+          "value": "ds_cnpj ASC,cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    },
+    {
+      "name": "tb_especie",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_especie",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "cd_grupo_especie",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_especie_on_last_modified",
+          "value": "last_modified DESC"
+        }
+      ]
+    },
+    {
+      "name": "tb_raca",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_raca",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "id_especie",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_especie",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_raca_on_last_modified",
+          "value": "last_modified DESC"
+        }
+      ]
+    },
+    {
+      "name": "tb_produtor",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_produtor",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "ds_cpf_cnpj_produtor",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_produtor_on_last_modified",
+          "value": "last_modified DESC"
+        }
+      ]
+    },
+    {
+      "name": "tb_propriedade",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "BIGINT NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_propriedade",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "cd_municipio_propriedade",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "nr_latitude_graus",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_latitude_minutos",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_latitude_segundos",
+          "value": "NUMERIC"
+        },
+        {
+          "column": "nr_longitude_graus",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_longitude_minutos",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_longitude_segundos",
+          "value": "NUMERIC"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_propriedade_on_last_modified",
+          "value": "last_modified DESC"
+        }
+      ]
+    },
+    {
+      "name": "tb_exploracao_pecuaria_equideos",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "id_produtor",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_produtor",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "ds_cpf_cnpj_produtor",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "id_propriedade",
+          "value": "BIGINT NOT NULL"
+        },
+        {
+          "column": "ds_propriedade",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "cd_municipio_propriedade",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_municipio_propriedade",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "nr_latitude_graus",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_latitude_minutos",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_latitude_segundos",
+          "value": "NUMERIC"
+        },
+        {
+          "column": "nr_longitude_graus",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_longitude_minutos",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_longitude_segundos",
+          "value": "NUMERIC"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_exploracao_pecuaria_equideos_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_exploracao_pecuaria_equideos_on_id_produtor_id_propriedade_cd_estado",
+          "value": "id_produtor ASC,id_propriedade,cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    },
+    {
+      "name": "tb_equino",
+      "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
+          "column": "id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_estado",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "cd_exploracao_pecuaria",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "id_produtor",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_produtor",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "ds_cpf_cnpj_produtor",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "id_propriedade",
+          "value": "BIGINT NOT NULL"
+        },
+        {
+          "column": "ds_propriedade",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "cd_municipio_propriedade",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_municipio_propriedade",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "cd_especie",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_especie",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "cd_raca",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_raca",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "ds_identificacao_animal",
+          "value": "VARCHAR(150) NOT NULL"
+        },
+        {
+          "column": "in_sexo",
+          "value": "VARCHAR(1) NOT NULL"
+        },
+        {
+          "column": "dt_nascimento",
+          "value": "DATE NOT NULL"
+        },
+        {
+          "column": "cd_pelagem_variedade",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_caracteristicas_pelagem_variedade",
+          "value": "VARCHAR"
+        },
+        {
+          "column": "id_pelagem",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_pelagem",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "ds_caracteristicas_pelagem",
+          "value": "VARCHAR"
+        },
+        {
+          "column": "id_variedade_pelagem",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "ds_variedade_pelagem",
+          "value": "VARCHAR NOT NULL"
+        },
+        {
+          "column": "cd_particularidade",
+          "value": "INTEGER"
+        },
+        {
+          "column": "ds_particularidade",
+          "value": "VARCHAR"
+        },
+        {
+          "column": "cd_particularidade_categoria",
+          "value": "INTEGER"
+        },
+        {
+          "column": "ds_particularidade_categoria",
+          "value": "VARCHAR"
+        },
+        {
+          "column": "ds_chip",
+          "value": "VARCHAR(50)"
+        },
+        {
+          "column": "nr_associacao_raca",
+          "value": "VARCHAR(50)"
+        },
+        {
+          "column": "in_ativo",
+          "value": "BOOLEAN NOT NULL"
+        },
+        {
+          "constraint": "PK_id_cd_estado",
+          "value": "PRIMARY KEY (id,cd_estado)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "index_tb_equino_on_last_modified",
+          "value": "last_modified DESC"
+        },
+        {
+          "name": "index_tb_equino_on_cd_exploracao_pecuaria_ds_identificacao_animal_cd_estado",
+          "value": "cd_exploracao_pecuaria,ds_identificacao_animal ASC,cd_estado",
+          "mode": "UNIQUE"
+        }
+      ]
+    }
+  ]
+}

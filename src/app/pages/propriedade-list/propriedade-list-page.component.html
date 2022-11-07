@@ -32,8 +32,9 @@
 <ion-content [fullscreen]="true">
     <ion-grid class="ion-padding">
         <ion-row class="ion-no-padding">
-            <ion-col  *ngFor="let item of items" class="ion-no-padding">
-                <sm-propriedade-card-lg [data]="item"></sm-propriedade-card-lg>
+            <ion-col  *ngFor="let item of $propriedades | async" class="ion-no-padding">
+                <sm-propriedade-card-lg [data]="item"
+                                        (click)="equinoByPropriedadeIdNavigate(item.idPropriedade)"></sm-propriedade-card-lg>
             </ion-col>
         </ion-row>
     </ion-grid>

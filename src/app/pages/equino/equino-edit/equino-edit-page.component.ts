@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { Preferences} from '@capacitor/preferences';
-import {SQLiteService} from '../../../../services/sql-lite.service';
-import {UserChecked} from '../../../../services/validate-pf-or-pj.service';
+import { UserChecked } from 'src/app/services/validate-pf-or-pj.service';
+import {SQLiteService} from '../../../services/sql-lite.service';
 
 @Component({
     selector: 'app-equino-edit',

@@ -3,6 +3,7 @@ import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {UserChecked, ValidatePfOrPjService} from '../../services/validate-pf-or-pj.service';
 import {Preferences} from '@capacitor/preferences';
 import {Router} from '@angular/router';
+import {ConfigService} from '../../services/config.service';
 
 @Component({
     selector: 'app-login-two',
@@ -22,7 +23,8 @@ export class LoginPage implements OnInit {
     constructor(
         private formBuilder: UntypedFormBuilder,
         private validatePfOrPj: ValidatePfOrPjService,
-        private router: Router
+        private router: Router,
+        private configService:ConfigService
     ) {
     }
 
@@ -30,8 +32,7 @@ export class LoginPage implements OnInit {
         this.loginForm = this.formBuilder.group({
             password: [null, [Validators.required]],
         });
-        const userLogged = await Preferences.get({key: 'user'});
-        this.userChecked = JSON.parse(userLogged.value);
+        this.configService.userLogged.subscribe(userLogged=>this.userChecked=userLogged)
     }
 
     signIn() {

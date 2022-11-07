@@ -8,7 +8,8 @@ import {ServerApiResource} from '../app/domain/server-api-resource';
 export const environment = {
   production: false,
   apiUrl: 'https://www.smsgi.com.br/gsm_alpha/services/passaporteEquestre',
-  columnTbEstado:'ds_endereco_ws_des'
+  columnTbEstado:'ds_endereco_ws_des',
+  databaseName:'siapec3-pe'
 };
 
 /*

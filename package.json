@@ -36,10 +36,13 @@
     "@ionic/angular": "^6.3.2",
     "@ionic/core": "^6.0.1",
     "br-mask": "0.0.10",
+    "class-transformer": "^0.5.1",
     "date-fns": "^2.14.0",
+    "keys-converter": "^3.0.4",
     "rxjs": "~6.5.1",
     "swiper": "^7.4.1",
     "tslib": "^2.0.0",
+    "uuid": "^9.0.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

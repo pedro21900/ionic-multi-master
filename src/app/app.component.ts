@@ -9,6 +9,8 @@ import {environment} from '../environments/environment';
 import {UserChecked} from './services/validate-pf-or-pj.service';
 import {Router} from '@angular/router';
 import {Network} from '@capacitor/network';
+import {ConfigService} from './services/config.service';
+import {ServerApiResourceRepository} from './repositories/server-api-resource.repository';
 
 @Component({
   selector: 'app-root',
@@ -261,6 +263,8 @@ export class AppComponent implements OnInit {
       public menu: MenuController,
       private sqLiteService: SQLiteService,
       private router: Router,
+      private configService:ConfigService,
+      private  serverApiResourceProvider:ServerApiResourceRepository
   ) {
     this.initializeApp();
   }
@@ -293,10 +297,10 @@ export class AppComponent implements OnInit {
       console.log(`CapacitorSqlite está ${ret ? 'Ativo' : 'Inativo'}`);
       const dbSetupDone = await Preferences.get({key: 'db_name'});
       if (!dbSetupDone.value) {
-        this.sqLiteService.downloadDatabase(false, `${environment.apiUrl}/consulta/estadosPassaporteEquestre`);
+        await this.sqLiteService.downloadDatabase(false, `${environment.apiUrl}/consulta/estadosPassaporteEquestre`);
+        await this.sqLiteService.openConnection(environment.databaseName, false, 'no-encryption', 1,false);
       } else {
-        this.sqLiteService.dbConection('siapec3-pe');
-        this.sqLiteService.dbReady.next(true);
+        await this.sqLiteService.openConnection(environment.databaseName, false, 'no-encryption', 1,false)
       }
     });
   }
@@ -307,10 +311,12 @@ export class AppComponent implements OnInit {
     const connectionNetwork:boolean =await this.checkConnectionNetwork(userLogged);
     if ( userLogged == null && connectionNetwork)  this.router.navigate(['onboarding-two'], {replaceUrl: true});
     else {
-      const urlBase: string = (await Preferences.get({key: 'estadoApiResource'})).value;
-      await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
-      await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/sincronismoInicial`);
-      this.router.navigate(['home'], {replaceUrl: true});
+      this.configService.urlBase.subscribe(async urlBase => {
+        await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
+        await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/sincronismoInicial`);
+        this.router.navigate(['home'], {replaceUrl: true});
+      })
+
     }
   }
 

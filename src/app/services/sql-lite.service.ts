@@ -29,7 +29,9 @@ export class SQLiteService {
 
     public dbName: string;
 
-    sqlite: SQLiteConnection;
+    sqliteConnection: SQLiteConnection;
+
+    dbConnection:SQLiteDBConnection;
 
     isService: boolean = false;
 
@@ -52,50 +54,31 @@ export class SQLiteService {
                 this.native = true;
             }
             this.sqlitePlugin = CapacitorSQLite;
-            this.sqlite = new SQLiteConnection(this.sqlitePlugin);
+            this.sqliteConnection = new SQLiteConnection(this.sqlitePlugin);
             this.isService = true;
             resolve(true);
         });
     }
 
-
-    async echo(value: string): Promise<capEchoResult> {
-        if (this.sqlite != null) {
-            try {
-                const ret = await this.sqlite.echo(value);
-                return Promise.resolve(ret);
-            } catch (err) {
-                return Promise.reject(new Error(err));
+    async openConnection(dbName: string,
+                         encrypted: boolean, mode: string, version: number,
+                         readOnly: boolean): Promise<SQLiteDBConnection> {
+        try {
+            const retCC = (await this.sqliteConnection.checkConnectionsConsistency()).result;
+            const isConn = (await this.sqliteConnection.isConnection(dbName,readOnly)).result;
+            if(retCC && isConn) {
+                this.dbConnection = await this.sqliteConnection.retrieveConnection(dbName,readOnly);
+            } else {
+                this.dbConnection = await this.sqliteConnection.createConnection(dbName, encrypted, mode, version,readOnly);
             }
-        } else {
-            return Promise.reject(new Error('no connection open'));
+
+            await this.dbConnection.open();
+            return this.dbConnection;
+        } catch (err) {
+            return Promise.reject(err);
         }
     }
 
-    /**
-     * addUpgradeStatement
-     * @param database
-     * @param fromVersion
-     * @param toVersion
-     * @param statement
-     * @param set
-     */
-    async addUpgradeStatement(database: string, fromVersion: number,
-                              toVersion: number, statement: string,
-                              set?: capSQLiteSet[])
-        : Promise<void> {
-        if (this.sqlite != null) {
-            try {
-                // await this.sqlite.addUpgradeStatement(database, fromVersion, toVersion,
-                //     statement, set ? set : []);
-                return Promise.resolve();
-            } catch (err) {
-                return Promise.reject(new Error(err));
-            }
-        } else {
-            return Promise.reject(new Error(`no connection open for ${database}`));
-        }
-    }
 
     /**
      * Create a connection to a database
@@ -107,9 +90,9 @@ export class SQLiteService {
     async createConnection(database: string, encrypted: boolean,
                            mode: string, version: number,readOnly:boolean
     ): Promise<SQLiteDBConnection> {
-        if (this.sqlite != null) {
+        if (this.sqliteConnection != null) {
             try {
-                const db: SQLiteDBConnection = await this.sqlite.createConnection(
+                const db: SQLiteDBConnection = await this.sqliteConnection.createConnection(
                     database, encrypted, mode, version,readOnly);
                 if (db != null) {
                     return Promise.resolve(db);
@@ -129,9 +112,9 @@ export class SQLiteService {
      * @param database
      */
     async closeConnection(database: string): Promise<void> {
-        if (this.sqlite != null) {
+        if (this.sqliteConnection != null) {
             try {
-                await this.sqlite.closeConnection(database,false);
+                await this.sqliteConnection.closeConnection(database,false);
                 return Promise.resolve();
             } catch (err) {
                 return Promise.reject(new Error(err));
@@ -145,9 +128,9 @@ export class SQLiteService {
      * Close all existing connections
      */
     async closeAllConnections(): Promise<void> {
-        if (this.sqlite != null) {
+        if (this.sqliteConnection != null) {
             try {
-                return Promise.resolve(await this.sqlite.closeAllConnections());
+                return Promise.resolve(await this.sqliteConnection.closeAllConnections());
             } catch (err) {
                 return Promise.reject(new Error(err));
             }
@@ -161,9 +144,9 @@ export class SQLiteService {
      * @param jsonstring
      */
     async importFromJson(jsonstring: string): Promise<capSQLiteChanges> {
-        if (this.sqlite != null) {
+        if (this.sqliteConnection != null) {
             try {
-                return Promise.resolve(await this.sqlite.importFromJson(jsonstring));
+                return Promise.resolve(await this.sqliteConnection.importFromJson(jsonstring));
             } catch (err) {
                 return Promise.reject(new Error(err));
             }
@@ -179,9 +162,9 @@ export class SQLiteService {
      */
 
     async isJsonValid(jsonstring: string): Promise<capSQLiteResult> {
-        if (this.sqlite != null) {
+        if (this.sqliteConnection != null) {
             try {
-                return Promise.resolve(await this.sqlite.isJsonValid(jsonstring));
+                return Promise.resolve(await this.sqliteConnection.isJsonValid(jsonstring));
             } catch (err) {
                 return Promise.reject(new Error(err));
             }
@@ -196,9 +179,9 @@ export class SQLiteService {
      * @param database
      */
     async isConnection(database: string): Promise<capSQLiteResult> {
-        if (this.sqlite != null) {
+        if (this.sqliteConnection != null) {
             try {
-                return Promise.resolve(await this.sqlite.isConnection(database,false));
+                return Promise.resolve(await this.sqliteConnection.isConnection(database,false));
             } catch (err) {
                 return Promise.reject(new Error(err));
             }
@@ -213,9 +196,9 @@ export class SQLiteService {
      */
     async retrieveConnection(database: string):
         Promise<SQLiteDBConnection> {
-        if (this.sqlite != null) {
+        if (this.sqliteConnection != null) {
             try {
-                return Promise.resolve(await this.sqlite.retrieveConnection(database,false));
+                return Promise.resolve(await this.sqliteConnection.retrieveConnection(database,false));
             } catch (err) {
                 return Promise.reject(new Error(err));
             }
@@ -276,8 +259,8 @@ export class SQLiteService {
         } else {
             await connection.setSyncDate(new Date(new Date().toString().split('GMT')[0] + ' UTC').toISOString());
         }
-        connection.close();
-        this.closeConnection(database);
+      //  connection.close();
+       // this.closeConnection(database);
     }
 
    public async dbConection(database: string): Promise<SQLiteDBConnection> {

@@ -5,10 +5,11 @@ import {Router} from '@angular/router';
 import {GetResult, Preferences} from '@capacitor/preferences';
 import {LoadingController, ModalController, NavController} from '@ionic/angular';
 import {from, Observable} from 'rxjs';
-import {ServerApiResourceProvider} from '../../../providers/server-api-resource.provider';
+import {ServerApiResourceRepository} from '../../../repositories/server-api-resource.repository';
 import {ModalErrorPage} from '../../modal-error/modal-error-page.component';
 import {environment} from '../../../../environments/environment';
 import {SQLiteService} from '../../../services/sql-lite.service';
+import {ConfigService} from '../../../services/config.service';
 
 @Component({
     selector: 'app-login-two',
@@ -32,9 +33,10 @@ export class LoginValidationPage implements OnInit {
         public navCtrl: NavController,
         private router: Router,
         private loadingCtrl: LoadingController,
-        private serverResourceInformation: ServerApiResourceProvider,
+        private serverResourceInformation: ServerApiResourceRepository,
         private modalController: ModalController,
-        private sqLiteService:SQLiteService
+        private sqLiteService:SQLiteService,
+        private configService:ConfigService
     ) {
     }
 
@@ -52,7 +54,8 @@ export class LoginValidationPage implements OnInit {
             const loading = await this.loadingCtrl.create({ message: 'Validando....' });
             const urlBase:string=this.loginForm.value.estado[environment.columnTbEstado];
             await Preferences.set({key: 'estadoApiResource', value: urlBase});
-            this.sqLiteService.downloadDatabase(true, `${urlBase}rest/passaporteEquestre/gerarDatabase`);
+            await this.sqLiteService.downloadDatabase(true, `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
+             this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/sincronismoInicial`);
             loading.present();
             //this.showLoading();
             from(this.validatePfOrPj
@@ -65,6 +68,7 @@ export class LoginValidationPage implements OnInit {
     async userRouter(userChecked: UserChecked) {
         if (userChecked.codMsgResponse == 'MS0001') {
             await Preferences.set({key: 'user', value: JSON.stringify(userChecked)});
+            this.configService.setUserLogged(userChecked);
             this.loadingCtrl.dismiss();
             this.router.navigate(['/login', 'autentication']);
         } else {

@@ -2,7 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import { Preferences} from '@capacitor/preferences';
 import {SQLiteService} from '../../../services/sql-lite.service';
 import {UserChecked} from '../../../services/validate-pf-or-pj.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ExploracaoPecuariaEquideoProvider} from '../../../repositories/exploracao-pecuaria-equideos.repository';
+import {ExploracaoPecuariaEquideo} from '../../../domain/exploracao-pecuaria-equideos';
+import {EquinoRepository} from '../../../repositories/equino.repository';
+import {Equino} from '../../../domain/equino';
+import {from, Observable} from 'rxjs';
+import {NavController} from '@ionic/angular';
 
 @Component({
     selector: 'app-catalog',
@@ -15,88 +21,45 @@ export class EquinoListPage implements OnInit {
 
     API_RESOURCE: string = `rest/passaporteEquestre/consultaExploracaoPecuariaEquideos`;
 
-    items = [
-        {
-            id:1,
-            image:
-                'https://images.unsplash.com/photo-1563903530908-afdd155d057a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
-            nome: 'Paçoca',
-            especie: 'cachorro',
-            idade: '6 anos',
-            raca: 'Cofap',
-            pelagem: 'Grossa',
-            validade: 2022-10-12,
-            badge: '',
-        },
-        {
-            id:2,
-            image:
-                'https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=343&q=80',
-            nome: 'Natasha',
-            especie: 'cachorro',
-            idade: '6 anos',
-            raca: 'Cofap',
-            pelagem: 'Grossa',
-            validade: 2022-10-12,
-            badge: '-10%',
-        },
-        {
-            id:3,
-            image:
-                'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
-            nome: 'Back',
-            especie: 'cachorro',
-            idade: '6 anos',
-            raca: 'Cofap',
-            pelagem: 'Grossa',
-            validade: 2022-10-12,
-            badge: '',
-        },
-        {
-            id:4,
-            image:
-                'https://images.unsplash.com/photo-1520256862855-398228c41684?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
-            nome: 'Café',
-            especie: 'cachorro',
-            idade: '6 anos',
-            raca: 'Cofap',
-            pelagem: 'Grossa',
-            validade: 2022-10-12,
-            badge: '',
-        },
-        {
-            id:5,
-            image:
-                'https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
-            nome: 'Gato',
-            especie: 'cachorro',
-            idade: '6 anos',
-            raca: 'Cofap',
-            pelagem: 'Grossa',
-            validade: 2022-10-12,
-            badge: '',
-        },
-    ];
+    exploracaoPecuariaEquideo:ExploracaoPecuariaEquideo;
 
+    $equinos:Observable<Equino[]>;
 
-    constructor(private sqLiteService: SQLiteService,private router:Router) {
+    constructor(
+        private sqLiteService: SQLiteService,
+                private navController:NavController,
+        private activatedRoute:ActivatedRoute,
+        private exploracaoPecuariaEquideoProvider:ExploracaoPecuariaEquideoProvider,
+        private equinoProvider:EquinoRepository
+    ) {
     }
 
     async ngOnInit() {
         const userLogged = await Preferences.get({key: 'user'});
         this.userChecked = JSON.parse(userLogged.value);
+        this.activatedRoute.queryParamMap
+            .subscribe(async params => {
+                const idPropriedade:number=Number(params.get('idPropriedade'));
+                this.exploracaoPecuariaEquideo = await this.exploracaoPecuariaEquideoProvider.findById(idPropriedade);
+                this.$equinos =from(this.equinoProvider.findAll());
+            })
     }
 
     async keyUpEnter(cpfOrCnpj:string) {
         const cpfOrCnpjOnlyNumbers:number = parseInt(cpfOrCnpj.replace(/[^a-zA-Z0-9 ]/g, ''));
         const urlBase: string = (await Preferences.get({key: 'estadoApiResource'})).value;
-        this.sqLiteService.downloadDatabaseFromRequestParam(false, `${urlBase}${this.API_RESOURCE}`, cpfOrCnpjOnlyNumbers);
+        //this.sqLiteService.downloadDatabaseFromRequestParam(false, `${urlBase}${this.API_RESOURCE}`, cpfOrCnpjOnlyNumbers);
     }
 
-    edit(id: number) {
-        this.router.navigate(['/equino','edit',id])
+    edit(id: string) {
+        this.navController.navigateForward(['equino','edit',id],{queryParams: {idPropriedade: this.exploracaoPecuariaEquideo.idPropriedade }});
     }
     create() {
-        this.router.navigate(['/equino','edit'])
+        this.navController.navigateForward(['equino','edit'],{queryParams: {idPropriedade: this.exploracaoPecuariaEquideo.idPropriedade }});
+
+    }
+
+    delete(id: string) {
+        this.equinoProvider.deleteById(id);
     }
 }
