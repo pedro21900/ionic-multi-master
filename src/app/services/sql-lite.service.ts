@@ -15,6 +15,7 @@ import {
 import {Capacitor} from '@capacitor/core';
 import {ErrorHandlerException} from '../@core/handlers/error-handler-exception';
 import {Preferences} from '@capacitor/preferences';
+import {environment} from '../../environments/environment';
 
 const DB_SETUP_KEY = 'first_db_setup';
 const DB_NAME_KEY = 'db_name';
@@ -79,7 +80,31 @@ export class SQLiteService {
         }
     }
 
+    async createSyncTable(): Promise<void> {
+        try {
+            // create synchronization table
+            let res: any = await this.dbConnection.createSyncTable();
+            if (res.changes.changes < 0) {
+                const msg = `createSyncTable "db-test-json" changes < 0 `;
+                return Promise.reject(msg);
+            }
+            // get the synchronization date
+            res = await this.dbConnection.getSyncDate();
+            if(res.syncDate <= 0) {
+                const msg = `getSyncDate return 0 `;
+                return Promise.reject(msg);
+            }
 
+            if(this.platform === 'web') {
+                // save the db to store
+                await this.sqliteConnection.saveToStore('db-test-json');
+            }
+            return;
+        } catch (err: any) {
+            const msg = err.message ? err.message : err;
+            return Promise.reject(msg);
+        }
+    }
     /**
      * Create a connection to a database
      * @param database
@@ -251,13 +276,15 @@ export class SQLiteService {
     }
 
     async syncTables(update = false, database: string) {
-        const connection = await this.dbConection(database);
-        connection.open();
+        const connection = await this.openConnection(environment.databaseName,false,'no-encryption',1,false);
+
         if (!update) {
             await connection.createSyncTable();
 
         } else {
-            await connection.setSyncDate(new Date(new Date().toString().split('GMT')[0] + ' UTC').toISOString());
+            const d = new Date();
+            await connection.setSyncDate(d.toISOString());
+            //await connection.setSyncDate(new Date(new Date().toString().split('GMT')[0] + ' UTC').toISOString());
         }
       //  connection.close();
        // this.closeConnection(database);

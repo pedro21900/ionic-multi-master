@@ -1,5 +1,10 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Equino} from '../../../domain/equino';
+import {from, Observable} from 'rxjs';
+import {Especie} from '../../../domain/especie';
+import {Raca} from '../../../domain/raca';
+import {RacaRepository} from '../../../repositories/raca.repository';
+import {EspecieRepository} from '../../../repositories/especie.repository';
 
 @Component({
   selector: 'sm-equino-card-lg',
@@ -14,8 +19,16 @@ export class EquinoCardLgComponent implements OnInit {
 
   @Output() onDeleteClick = new EventEmitter();
 
-  constructor() { }
+  especie:string;
 
-  ngOnInit() {}
+  raca:string;
+
+  constructor(private racaProvider:RacaRepository,
+              private especieProvider:EspecieRepository) { }
+
+  ngOnInit() {
+   from(this.especieProvider.findById(this.data.cdEspecie)).subscribe((especie:Especie)=>this.especie=especie.dsEspecie);
+    from(this.racaProvider.findById(this.data.cdRaca)).subscribe((raca:Raca)=>this.raca=raca.dsRaca);
+  }
 
 }

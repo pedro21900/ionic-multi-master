@@ -20,4 +20,15 @@ export class EspecieRepository {
     });
   }
 
+  async findById(id: number): Promise<Especie> {
+    return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
+      let sqlcmd: string = "select * from tb_especie where id = ? limit 1";
+      let values: Array<any> = [id];
+      let ret: any = await db.query(sqlcmd, values);
+      if (ret.values.length > 0) {
+        return objectKeysToCamelCaseV2(ret.values[0] as Especie);
+      }
+      throw Error('get tb_especie by id failed');
+    });
+  }
 }

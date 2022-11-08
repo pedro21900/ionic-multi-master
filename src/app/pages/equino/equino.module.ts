@@ -12,6 +12,7 @@ import {EquinoListPage} from './equino-list/equino-list-page.component';
 import {EquinoEditPage} from './equino-edit/equino-edit-page.component';
 import {EquinoEditCadastroPage} from './equino-edit/equino-edit-cadastro/equino-edit-cadastro-page.component';
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -20,7 +21,7 @@ import {EquinoEditCadastroPage} from './equino-edit/equino-edit-cadastro/equino-
         IonicModule,
         EquinoEditPageRoutingModule,
         ComponentsModule,
-        BrMaskerModule
+        BrMaskerModule,
     ],
     declarations: [
         EquinoPage,

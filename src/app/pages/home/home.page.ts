@@ -18,12 +18,12 @@ export class HomePage implements OnInit {
   features = [
     {
       icon: 'phone-portrait-outline',
-      text: 'Baixar Propriedades',
+      text: 'Propriedades',
       routerLink: '/propriedade'
     },
     {
       icon: 'grid-outline',
-      text: 'Atualizar Passaporte',
+      text: 'Passaporte',
       routerLink: '/'
     },
     {

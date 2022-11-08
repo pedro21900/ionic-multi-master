@@ -18,6 +18,13 @@ import {Dialog} from '@capacitor/dialog';
 })
 export class EquinoListPage implements OnInit {
 
+    empty =
+        {
+            image: 'assets/img/empty-box.png',
+            title: 'Sem Equinos no dispositivo',
+            caption: 'Refênte a essa propriedade'
+        }
+
     exploracaoPecuariaEquideo: ExploracaoPecuariaEquideo;
 
     $equinos: Observable<Equino[]>;

@@ -41,6 +41,11 @@
                                    (onDeleteClick)="delete(item.id)"></sm-equino-card-lg>
             </ion-col>
         </ion-row>
+        <ion-row *ngIf="$equinos | async as equinos">
+            <ng-container *ngIf="equinos.length==0">
+                <app-empty-state  [item]="empty"></app-empty-state>
+            </ng-container>
+        </ion-row>
     </ion-grid>
     <ion-fab vertical="bottom"
              horizontal="end"

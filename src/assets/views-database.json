@@ -477,6 +477,14 @@
       "name": "tb_produtor",
       "schema": [
         {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
+        {
           "column": "id",
           "value": "INTEGER NOT NULL"
         },
@@ -489,28 +497,8 @@
           "value": "VARCHAR NOT NULL"
         },
         {
-          "column": "cd_municipio",
-          "value": "INTEGER"
-        },
-        {
-          "column": "in_tipo_pessoa",
-          "value": "VARCHAR(1)"
-        },
-        {
-          "column": "in_tipo_produtor",
-          "value": "VARCHAR(2)"
-        },
-        {
           "column": "ds_cpf_cnpj_produtor",
-          "value": "VARCHAR(14) NOT NULL"
-        },
-        {
-          "column": "sql_deleted",
-          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
-        },
-        {
-          "column": "last_modified",
-          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+          "value": "VARCHAR NOT NULL"
         },
         {
           "constraint": "PK_id_cd_estado",
@@ -525,8 +513,16 @@
       ]
     },
     {
-      "name": "tb_propriedade_rural",
+      "name": "tb_propriedade",
       "schema": [
+        {
+          "column": "sql_deleted",
+          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+        },
+        {
+          "column": "last_modified",
+          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+        },
         {
           "column": "id",
           "value": "BIGINT NOT NULL"
@@ -536,28 +532,16 @@
           "value": "INTEGER NOT NULL"
         },
         {
-          "column": "ds_propriedade_rural",
+          "column": "ds_propriedade",
           "value": "VARCHAR NOT NULL"
         },
         {
-          "column": "cd_municipio",
+          "column": "cd_municipio_propriedade",
           "value": "INTEGER NOT NULL"
         },
         {
-          "column": "ds_confrontantes",
-          "value": "varchar(500)"
-        },
-        {
-          "column": "cd_proprietario",
-          "value": "INTEGER NOT NULL"
-        },
-        {
-          "column": "ds_via_de_acesso",
-          "value": "varchar(500)"
-        },
-        {
-          "column": "vl_area",
-          "value": "NUMERIC"
+          "column": "ds_municipio_propriedade",
+          "value": "VARCHAR NOT NULL"
         },
         {
           "column": "nr_latitude_graus",
@@ -568,12 +552,20 @@
           "value": "INTEGER"
         },
         {
-          "column": "sql_deleted",
-          "value": "BOOLEAN DEFAULT 0 CHECK (sql_deleted IN (0, 1))"
+          "column": "nr_latitude_segundos",
+          "value": "NUMERIC"
         },
         {
-          "column": "last_modified",
-          "value": "INTEGER DEFAULT (strftime('%s', 'now'))"
+          "column": "nr_longitude_graus",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_longitude_minutos",
+          "value": "INTEGER"
+        },
+        {
+          "column": "nr_longitude_segundos",
+          "value": "NUMERIC"
         },
         {
           "constraint": "PK_id_cd_estado",
@@ -582,7 +574,7 @@
       ],
       "indexes": [
         {
-          "name": "index_tb_propriedade_rural_on_last_modified",
+          "name": "index_tb_propriedade_on_last_modified",
           "value": "last_modified DESC"
         }
       ]

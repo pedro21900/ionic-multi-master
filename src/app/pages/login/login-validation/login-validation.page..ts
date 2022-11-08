@@ -54,8 +54,8 @@ export class LoginValidationPage implements OnInit {
             const loading = await this.loadingCtrl.create({ message: 'Validando....' });
             const urlBase:string=this.loginForm.value.estado[environment.columnTbEstado];
             await Preferences.set({key: 'estadoApiResource', value: urlBase});
-            await this.sqLiteService.downloadDatabase(true, `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
-             this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/sincronismoInicial`);
+            await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
+             this.sqLiteService.downloadDatabase(false, '/assets/values-database.json');
             loading.present();
             //this.showLoading();
             from(this.validatePfOrPj

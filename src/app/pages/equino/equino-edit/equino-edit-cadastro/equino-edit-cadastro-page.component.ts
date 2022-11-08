@@ -50,6 +50,9 @@ export class EquinoEditCadastroPage implements OnInit {
 
     exploracaoPecuariaEquideo:ExploracaoPecuariaEquideo;
 
+    dtNascimentoEquino: string;
+
+
     constructor(
         private activatedRoute:ActivatedRoute,
         private sqLiteService: SQLiteService,
@@ -74,7 +77,6 @@ export class EquinoEditCadastroPage implements OnInit {
         this.createForm();
 
         if (this.id) this.edit();
-        else this.create();
 
         this.userService.userLogged.subscribe(userLogged => this.userChecked = userLogged);
 
@@ -82,6 +84,8 @@ export class EquinoEditCadastroPage implements OnInit {
             const idPropriedade: number = Number(params.get('idPropriedade'));
             this.exploracaoPecuariaEquideo = await this.exploracaoPecuariaEquideoProvider.findById(idPropriedade);
         });
+
+        console.log(this.dtNascimentoEquino)
     }
 
     async validation() {
@@ -91,9 +95,12 @@ export class EquinoEditCadastroPage implements OnInit {
         this.populateEquino(equino);
         this.mergeObjectSatellite(equino);
 
+        if (this.id){
+            this.equinoProvider.update(equino);
+        }else this.equinoProvider.insert(equino);
 
         console.log(equino);
-        this.equinoProvider.insert(equino);
+
         this.router.navigate(['/home'], {replaceUrl: true});
     }
 
@@ -118,29 +125,28 @@ export class EquinoEditCadastroPage implements OnInit {
             cdRaca: [null, [Validators.required]],
             inSexo: [null, [Validators.required]],
             dtNascimento: [null, [Validators.required]],
-            //cdPelagem: [null, [Validators.required]],
-            //dsCaracteristicasPelagemVariedade: [null, [Validators.required]],
-            //cdParticularidade: [null, [Validators.required]],
-            //dsCaracteristicasPelagem: [null, [Validators.required]],
             cdPelagemVariedade: [null, [Validators.required]],
             dsChip: [null],
             nrAssociacaoRaca: [null],
         });
     }
 
-    private create() {
+    async edit() {
+        const equino: Equino = await this.equinoProvider.findById(this.id);
 
+        for (const equinoForm of Object.keys(equino)) {
+            if (!this.equinoForm.value.hasOwnProperty(equinoForm)) {
+                delete equino[equinoForm];
+            }
+        }
+
+        this.equinoForm.patchValue(equino)
     }
 
-    async edit() {
-      const equino:Equino=  await this.equinoProvider.findById(this.id);
-        console.log(equino)
-        for (const equinoForm of Object.keys(equino)) {
-            if( !this.equinoForm.value.hasOwnProperty(equinoForm))
-                delete equino[equinoForm];
-        }
-console.log(equino)
-        //this.equinoForm.setValue(equino)
-        this.equinoForm.patchValue(equino)
+    setDtNascmentoEquino($event: any) {
+       const day= new Date ($event.detail.value).getDate()
+       const month =new Date ($event.detail.value).getMonth()
+       const year= new Date ($event.detail.value).getFullYear()
+        this.dtNascimentoEquino =`${day}/${month}/${year}`;
     }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swiper, { Pagination, SwiperOptions } from 'swiper';
 
 @Component({
-  selector: 'app-empty-states',
+  selector: 'app-empty-states-page',
   templateUrl: './empty-states.page.html',
   styleUrls: ['./empty-states.page.scss'],
 })

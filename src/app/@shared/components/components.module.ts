@@ -31,12 +31,13 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { NewsCardComponent } from './news-card/news-card.component';
 import { NewsCardItemComponent } from './news-card-item/news-card-item.component';
 import { NewsGroupItemComponent } from './news-group-item/news-group-item.component';
-import { EmptyStateComponent } from './empty-state/empty-state.component';
+import { NoConnectComponent } from './no-connect/no-connect.component';
 import { SelectableBtnComponent } from './selectable-btn/selectable-btn.component';
 import { UtilsModule } from 'src/app/utils/utils.module';
 import {PropriedadeCardMdComponent} from './propriedade-card-md/propriedade-card-md.component';
 import {EquinoCardLgComponent} from './equino-card-lg/equino-card-lg.component';
 import {PropriedadeCardLgComponent} from './propridade-card-lg/propriedade-card-lg.component';
+import {EmptyStateComponent} from './empty-state/empty-state.component';
 
 @NgModule({
   declarations: [
@@ -70,11 +71,12 @@ import {PropriedadeCardLgComponent} from './propridade-card-lg/propriedade-card-
     NewsCardComponent,
     NewsCardItemComponent,
     NewsGroupItemComponent,
-    EmptyStateComponent,
+    NoConnectComponent,
     SelectableBtnComponent,
     EquinoCardLgComponent,
     PropriedadeCardMdComponent,
-    PropriedadeCardLgComponent
+    PropriedadeCardLgComponent,
+    EmptyStateComponent
   ],
   imports: [CommonModule, UtilsModule, IonicModule.forRoot()],
   exports: [
@@ -111,8 +113,9 @@ import {PropriedadeCardLgComponent} from './propridade-card-lg/propriedade-card-
     NewsCardComponent,
     NewsCardItemComponent,
     NewsGroupItemComponent,
-    EmptyStateComponent,
-    SelectableBtnComponent
+    NoConnectComponent,
+    SelectableBtnComponent,
+    EmptyStateComponent
   ],
 })
 export class ComponentsModule {}

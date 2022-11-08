@@ -298,9 +298,9 @@ export class AppComponent implements OnInit {
       const dbSetupDone = await Preferences.get({key: 'db_name'});
       if (!dbSetupDone.value) {
         await this.sqLiteService.downloadDatabase(false, `${environment.apiUrl}/consulta/estadosPassaporteEquestre`);
-        await this.sqLiteService.openConnection(environment.databaseName, false, 'no-encryption', 1,false);
+        await this.sqLiteService.openConnection(environment.databaseName, true, 'no-encryption', 1,false);
       } else {
-        await this.sqLiteService.openConnection(environment.databaseName, false, 'no-encryption', 1,false)
+        await this.sqLiteService.openConnection(environment.databaseName, true, 'no-encryption', 1,false)
       }
     });
   }
@@ -312,8 +312,8 @@ export class AppComponent implements OnInit {
     if ( userLogged == null && connectionNetwork)  this.router.navigate(['onboarding-two'], {replaceUrl: true});
     else {
       this.configService.urlBase.subscribe(async urlBase => {
-        await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
-        await this.sqLiteService.downloadDatabase(false, `${urlBase}rest/passaporteEquestre/sincronismoInicial`);
+        await this.sqLiteService.downloadDatabase(true , `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
+        await this.sqLiteService.downloadDatabase(true, '/assets/values-database.json');
         this.router.navigate(['home'], {replaceUrl: true});
       })
 

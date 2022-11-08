@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { NavController} from '@ionic/angular';
+import {LoadingController, ModalController, NavController} from '@ionic/angular';
 import { Preferences} from '@capacitor/preferences';
 import {SQLiteService} from '../../services/sql-lite.service';
 import {ExploracaoPecuariaEquideoProvider} from '../../repositories/exploracao-pecuaria-equideos.repository';
@@ -18,7 +18,17 @@ export class PropriedadeListPage implements OnInit {
 
     $propriedades:Observable<ExploracaoPecuariaEquideo[]> =from(this.exploracaoPecuariaEquideoProvider.findAll());
 
+    empty =
+        {
+            image: 'assets/img/empty-box.png',
+            title: 'Sem propriedades no dispositivo',
+            caption: ''
+        }
+
+
+
     constructor(
+        private loadingCtrl: LoadingController,
         private sqLiteService: SQLiteService,
         private navController:NavController,
         private exploracaoPecuariaEquideoProvider:ExploracaoPecuariaEquideoProvider) {
@@ -31,8 +41,13 @@ export class PropriedadeListPage implements OnInit {
     async keyUpEnter(cpfOrCnpj:string) {
         const cpfOrCnpjOnlyNumbers:number = parseInt(cpfOrCnpj.replace(/[^a-zA-Z0-9 ]/g, ''));
         const urlBase: string = (await Preferences.get({key: 'estadoApiResource'})).value;
-        from(this.sqLiteService.downloadDatabaseFromRequestParam(false, `${urlBase}${this.API_RESOURCE}`, cpfOrCnpjOnlyNumbers))
-            .subscribe(()=> this.$propriedades = from(this.exploracaoPecuariaEquideoProvider.findAll()));
+        const loading = await this.loadingCtrl.create({ message: 'Pesquisando....' });
+        loading.present();
+        from(this.sqLiteService.downloadDatabaseFromRequestParam(true, `${urlBase}${this.API_RESOURCE}`, cpfOrCnpjOnlyNumbers))
+            .subscribe(()=> {
+                this.$propriedades = from(this.exploracaoPecuariaEquideoProvider.findAll());
+                loading.dismiss();
+            });
 
     }
 

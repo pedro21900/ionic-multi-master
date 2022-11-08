@@ -205,3 +205,7 @@ ion-card {
   height: 100%;//your height of content here
   overflow: scroll;
 }
+ion-popover::part(content) {
+  top: unset !important;
+  bottom: 0;
+}

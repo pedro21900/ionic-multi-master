@@ -52,48 +52,27 @@
             <!--DT_NASCIMENTO-->
             <ion-item lines="none">
                 <ion-label position="stacked"
-                           class="label-question">Data de nascimento
-                </ion-label>
-<!--                <ion-input id="date"-->
-<!--                           type="text"-->
-
-<!--                           class="input-text"></ion-input>-->
-<!--                <ion-input-->
-<!--                        value="{{ date | date: 'dd.MM.yyyy' }}"-->
-<!--                        id="date"-->
-<!--                        class="ion-text-end"-->
-<!--                ></ion-input>-->
-
-                        <ion-datetime
-                                presentation="date"
-                                formControlName="dtNascimento"
-                                locale="sl-SI"
-                        ></ion-datetime>
-
+                           class="label-question input-label">Dt. Nascimento</ion-label>
+                <ion-input id="date"
+                           placeholder="Selecione a data de nascimento"
+                           formControlName="dtNascimento"
+                           [value]="dtNascimentoEquino"
+                           class="ion-text-start"
+                ></ion-input>
+                <ion-popover trigger="date" size="cover" side="top" alignment="center">
+                    <ng-template>
+                        <ion-datetime presentation="date"
+                                      display-format="DD/MM/YYYY"
+                                      formControlName="dtNascimento"
+                                      locale="pt-BR"
+                                      showDefaultButtons="true"
+                                      doneText="OK"
+                                      cancelText="Cancel"
+                                      (ionChange)="setDtNascmentoEquino($event)">
+                        </ion-datetime>
+                    </ng-template>
+                </ion-popover>
             </ion-item>
-            <!--CD_PELAGEM-->
-<!--            <ion-item lines="none">-->
-<!--                <ion-label position="stacked"-->
-<!--                           class="label-question input-label">Pelagem-->
-<!--                </ion-label>-->
-<!--                <ion-select formControlName="cdPelagem"-->
-<!--                            placeholder="Selecione a especie">-->
-<!--                <ng-container *ngFor="let pelagem of $pelagem | async ">-->
-<!--                    <ion-select-option [value]="pelagem.id">-->
-<!--                        {{pelagem.dsPelagem}}-->
-<!--                    </ion-select-option>-->
-<!--                </ng-container>-->
-<!--                </ion-select>-->
-<!--            </ion-item>-->
-            <!--DS_CALACTERISTICA_PELAGEM-->
-<!--            <ion-item lines="none">-->
-<!--                <ion-label position="stacked"-->
-<!--                           class="label-question">Caracteristica Pelagem-->
-<!--                </ion-label>-->
-<!--                <ion-input type="text"-->
-<!--                           formControlName="dsCaracteristicasPelagem"-->
-<!--                           class="input-text"></ion-input>-->
-<!--            </ion-item>-->
             <!--CD_PELAGEM_VARIEADADE-->
             <ion-item lines="none">
                 <ion-label position="stacked"
@@ -108,30 +87,6 @@
                     </ng-container>
                 </ion-select>
             </ion-item>
-            <!--DS_CARECTERISTICAS_PELAGEM_VARIEDADE-->
-<!--            <ion-item lines="none">-->
-<!--                <ion-label position="stacked"-->
-<!--                           class="label-question input-label">Caracteristica Variedade Pelagem-->
-<!--                </ion-label>-->
-<!--                <ion-input type="text"-->
-<!--                           formControlName="dsCaracteristicasPelagemVariedade"-->
-<!--                           class="input-text">-->
-<!--                </ion-input>-->
-<!--            </ion-item>-->
-            <!--CD_PARTICULARIDADE-->
-<!--            <ion-item lines="none">-->
-<!--                <ion-label position="stacked"-->
-<!--                           class="label-question input-label">Particularidade da pelagem-->
-<!--                </ion-label>-->
-<!--                <ion-select formControlName="cdParticularidade"-->
-<!--                            laceholder="Selecione a especie">-->
-<!--                    <ng-container *ngFor="let particularidade of $particularidade | async ">-->
-<!--                        <ion-select-option [value]="particularidade.id">-->
-<!--                            {{particularidade.dsParticularidade}}-->
-<!--                        </ion-select-option>-->
-<!--                    </ng-container>-->
-<!--                </ion-select>-->
-<!--            </ion-item>-->
             <!--DS_CHIP-->
             <ion-item lines="none">
                 <ion-label position="stacked"
