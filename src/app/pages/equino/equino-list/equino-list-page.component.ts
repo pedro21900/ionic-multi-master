@@ -11,6 +11,14 @@ import {from, Observable} from 'rxjs';
 import {NavController} from '@ionic/angular';
 import {Dialog} from '@capacitor/dialog';
 
+export class VwEquino {
+    id:string
+    dsIdentificacaoAnimal: string;
+    dsEspecie: string;
+    dsRaca: string;
+    lastModified:Date;
+}
+
 @Component({
     selector: 'app-catalog',
     templateUrl: './equino-list-page.component.html',
@@ -27,7 +35,7 @@ export class EquinoListPage implements OnInit {
 
     exploracaoPecuariaEquideo: ExploracaoPecuariaEquideo;
 
-    $equinos: Observable<Equino[]>;
+    $equinos: Observable<VwEquino[]>;
 
     constructor(
         private sqLiteService: SQLiteService,

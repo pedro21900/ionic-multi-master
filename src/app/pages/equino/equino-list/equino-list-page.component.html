@@ -1,4 +1,4 @@
-<ion-header  class="ion-no-border ">
+<ion-header class="ion-no-border ">
     <ion-grid class="ion-no-padding ion-no-margin header">
         <ion-row>
             <ion-col class="header-container">
@@ -20,7 +20,7 @@
             </ion-col>
         </ion-row>
         <ion-row class="ion-padding">
-            <ion-col  class="ion-padding-vertical">
+            <ion-col class="ion-padding-vertical">
                 <ion-searchbar #ionSearchbar animated class="ion-no-padding"
                                type="text"
                                (keyup.enter)="keyUpEnter(ionSearchbar.value)"></ion-searchbar>
@@ -43,7 +43,7 @@
         </ion-row>
         <ion-row *ngIf="$equinos | async as equinos">
             <ng-container *ngIf="equinos.length==0">
-                <app-empty-state  [item]="empty"></app-empty-state>
+                <app-empty-state [item]="empty"></app-empty-state>
             </ng-container>
         </ion-row>
     </ion-grid>

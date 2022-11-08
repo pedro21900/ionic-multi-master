@@ -5,6 +5,7 @@ import {Especie} from '../../../domain/especie';
 import {Raca} from '../../../domain/raca';
 import {RacaRepository} from '../../../repositories/raca.repository';
 import {EspecieRepository} from '../../../repositories/especie.repository';
+import {VwEquino} from '../../../pages/equino/equino-list/equino-list-page.component';
 
 @Component({
   selector: 'sm-equino-card-lg',
@@ -13,22 +14,16 @@ import {EspecieRepository} from '../../../repositories/especie.repository';
 })
 export class EquinoCardLgComponent implements OnInit {
 
-  @Input() data: Equino;
+  @Input() data: VwEquino;
 
   @Output() onEditClick = new EventEmitter();
 
   @Output() onDeleteClick = new EventEmitter();
 
-  especie:string;
-
-  raca:string;
-
-  constructor(private racaProvider:RacaRepository,
-              private especieProvider:EspecieRepository) { }
+  constructor() { }
 
   ngOnInit() {
-   from(this.especieProvider.findById(this.data.cdEspecie)).subscribe((especie:Especie)=>this.especie=especie.dsEspecie);
-    from(this.racaProvider.findById(this.data.cdRaca)).subscribe((raca:Raca)=>this.raca=raca.dsRaca);
+
   }
 
 }

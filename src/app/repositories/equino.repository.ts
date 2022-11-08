@@ -4,6 +4,7 @@ import {objectKeysToCamelCaseV2, objectKeysToSnakeCaseV2} from 'keys-converter';
 import {Equino} from '../domain/equino';
 import {DatabaseService} from '../services/database.service';
 import {v4 as uuidv4} from 'uuid';
+import {VwEquino} from '../pages/equino/equino-list/equino-list-page.component';
 
 @Injectable({
     providedIn: 'root'
@@ -15,9 +16,9 @@ export class EquinoRepository {
 
     }
 
-    async findAll(): Promise<Equino[]> {
+    async findAll(): Promise<VwEquino[]> {
         return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
-            var tbEquino: DBSQLiteValues = await db.query('select * from tb_equino');
+            var tbEquino: DBSQLiteValues = await db.query('select * from vw_equino');
             return tbEquino.values.map(equino => objectKeysToCamelCaseV2(equino));
         });
     }
