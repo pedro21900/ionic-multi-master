@@ -49,31 +49,29 @@ export class EquinoListPage implements OnInit {
     async ngOnInit() {
         this.activatedRoute.queryParamMap
             .subscribe(async params => {
-                const idPropriedade: number = Number(params.get('idPropriedade'));
-                this.exploracaoPecuariaEquideo = await this.exploracaoPecuariaEquideoProvider.findById(idPropriedade);
-                this.$equinos = from(this.equinoProvider.findAll());
+                const idExpPecEquideo: number = Number(params.get('idExpPecEquideo'));
+                this.exploracaoPecuariaEquideo = await this.exploracaoPecuariaEquideoProvider.findById(idExpPecEquideo);
+                this.$equinos = from(this.equinoProvider.findAllByExpPecEquideos(idExpPecEquideo));
             });
     }
 
-    async keyUpEnter(cpfOrCnpj: string) {
-        const cpfOrCnpjOnlyNumbers: number = parseInt(cpfOrCnpj.replace(/[^a-zA-Z0-9 ]/g, ''));
-        const urlBase: string = (await Preferences.get({key: 'estadoApiResource'})).value;
-        //this.sqLiteService.downloadDatabaseFromRequestParam(false, `${urlBase}${this.API_RESOURCE}`, cpfOrCnpjOnlyNumbers);
-    }
+    async ionChange(dsIdentificacaoAnimal: string) {
+       this.$equinos= from(this.equinoProvider.findByDsIdentificacaoAnimal(dsIdentificacaoAnimal));
+   }
 
     edit(id: string) {
-        this.navController.navigateForward(['equino', 'edit', id], {queryParams: {idPropriedade: this.exploracaoPecuariaEquideo.idPropriedade}});
+        this.navController.navigateForward(['equino', 'edit', id], {queryParams: {idPropriedade: this.exploracaoPecuariaEquideo.id}});
     }
 
     create() {
-        this.navController.navigateForward(['equino', 'edit'], {queryParams: {idPropriedade: this.exploracaoPecuariaEquideo.idPropriedade}});
+        this.navController.navigateForward(['equino', 'edit'], {queryParams: {idPropriedade: this.exploracaoPecuariaEquideo.id}});
 
     }
 
     delete(id: string) {
         from(Dialog.confirm({
-            title: 'Confirm',
-            message: `Você deseja realmente deletar este registro?`,
+            title: 'Você tem certeza destra operacão ?',
+            message: `Você não poderá recuperar o registro deletado !`,
         })).subscribe(async confirm => {
             if (confirm.value) {
                 await this.equinoProvider.deleteById(id);

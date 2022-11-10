@@ -35,12 +35,12 @@
     <ion-grid class="ion-padding">
         <ion-row class="ion-no-padding">
 
-            <ion-col  *ngFor="let item of $propriedades | async" class="ion-no-padding">
+            <ion-col  *ngFor="let item of $expPecEquideo | async" class="ion-no-padding">
                 <sm-propriedade-card-lg [data]="item"
-                                        (click)="equinoByPropriedadeIdNavigate(item.idPropriedade)"></sm-propriedade-card-lg>
+                                        (click)="equinoByPropriedadeIdNavigate(item.id)"></sm-propriedade-card-lg>
             </ion-col>
         </ion-row>
-        <ion-row *ngIf="$propriedades | async as propriedades">
+        <ion-row *ngIf="$expPecEquideo | async as propriedades">
             <ng-container *ngIf="propriedades.length==0">
                 <app-empty-state  [item]="empty"></app-empty-state>
             </ng-container>

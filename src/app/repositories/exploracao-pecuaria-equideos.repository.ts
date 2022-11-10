@@ -14,7 +14,7 @@ export class ExploracaoPecuariaEquideoProvider {
 
   async findAll(): Promise<ExploracaoPecuariaEquideo[]> {
     return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
-      var tbExploracaoPecuariaEquideos: DBSQLiteValues = await db.query("select * from tb_exploracao_pecuaria_equideos");
+      var tbExploracaoPecuariaEquideos: DBSQLiteValues = await db.query("select * from vw_expr_pec_equideo");
       return tbExploracaoPecuariaEquideos.values
           .map(exploracaoPecuariaEquideos=>objectKeysToCamelCaseV2(exploracaoPecuariaEquideos));
     });
@@ -22,7 +22,7 @@ export class ExploracaoPecuariaEquideoProvider {
 
   async findById(id: number): Promise<ExploracaoPecuariaEquideo> {
     return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
-      let sqlcmd: string = "select * from tb_exploracao_pecuaria_equideos where id_propriedade = ? limit 1";
+      let sqlcmd: string = "select * from vw_expr_pec_equideo where id = ? limit 1";
       let values: Array<any> = [id];
       let ret: any = await db.query(sqlcmd, values);
       if (ret.values.length > 0) {

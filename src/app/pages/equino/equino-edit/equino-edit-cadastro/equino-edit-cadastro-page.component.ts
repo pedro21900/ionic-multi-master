@@ -19,7 +19,7 @@ import {v4 as uuidv4} from 'uuid';
 import {ConfigService} from '../../../../services/config.service';
 import {ExploracaoPecuariaEquideoProvider} from '../../../../repositories/exploracao-pecuaria-equideos.repository';
 import {ExploracaoPecuariaEquideo} from '../../../../domain/exploracao-pecuaria-equideos';
-import {LoadingController} from '@ionic/angular';
+import {LoadingController, ToastController} from '@ionic/angular';
 import {PelagemVariedadeRepository} from '../../../../repositories/pelagem-variedade.repository';
 
 
@@ -30,7 +30,7 @@ import {PelagemVariedadeRepository} from '../../../../repositories/pelagem-varie
 })
 export class EquinoEditCadastroPage implements OnInit {
 
-    id:string;
+    id:number;
 
     equinoForm: UntypedFormGroup;
 
@@ -42,11 +42,7 @@ export class EquinoEditCadastroPage implements OnInit {
 
     sexos:any[]=['Macho','Femêa'];
 
-    $pelagem: Observable<Pelagem[]> = from(this.pelagemProvider.findAll());
-
     $pelagemVariedade: Observable<PelagemVariedade[]> = from(this.pelagemVariedadeProvider.findAll());
-
-    $particularidade: Observable<Particularidade[]> = from(this.particularidadeProvider.findAll());
 
     exploracaoPecuariaEquideo:ExploracaoPecuariaEquideo;
 
@@ -67,6 +63,7 @@ export class EquinoEditCadastroPage implements OnInit {
         private userService:ConfigService,
         private exploracaoPecuariaEquideoProvider:ExploracaoPecuariaEquideoProvider,
         private loadingCtrl: LoadingController,
+        private toastController:ToastController
     ) {
     }
 
@@ -85,7 +82,6 @@ export class EquinoEditCadastroPage implements OnInit {
             this.exploracaoPecuariaEquideo = await this.exploracaoPecuariaEquideoProvider.findById(idPropriedade);
         });
 
-        console.log(this.dtNascimentoEquino)
     }
 
     async validation() {
@@ -96,6 +92,7 @@ export class EquinoEditCadastroPage implements OnInit {
         this.mergeObjectSatellite(equino);
 
         if (this.id){
+            equino.id=this.id;
             this.equinoProvider.update(equino);
         }else this.equinoProvider.insert(equino);
 
@@ -113,8 +110,9 @@ export class EquinoEditCadastroPage implements OnInit {
     }
 
     mergeObjectSatellite(equino:Equino){
-        equino.id = uuidv4();
         equino.cdEstado=this.exploracaoPecuariaEquideo.cdEstado;
+        // equino.cdUsuarioDispositivo=1;
+        // equino.dtCadastro=new Date();
         equino.cdExploracaoPecuaria=this.exploracaoPecuariaEquideo.id;
 
     }

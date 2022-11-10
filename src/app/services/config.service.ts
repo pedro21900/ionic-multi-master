@@ -23,7 +23,7 @@ import {environment} from '../../environments/environment';
 })
 export class ConfigService {
 
-    userChain =new BehaviorSubject<UserChecked>(new UserChecked());
+    private userChain =new BehaviorSubject<UserChecked>(null);
 
     userLogged=this.userChain.asObservable();
 

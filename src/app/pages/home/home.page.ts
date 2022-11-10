@@ -27,20 +27,10 @@ export class HomePage implements OnInit {
       routerLink: '/'
     },
     {
-      icon: 'shapes-outline',
-      text: 'Equino',
-      routerLink: '/equino'
-    },
-    {
       icon: 'build-outline',
       text: 'Configurações',
-      routerLink: '/settings-three'
+      routerLink: '/settings'
     },
-    {
-      icon: 'color-palette-outline',
-      text: 'Custom colors',
-      routerLink: '/'
-    }
   ];
 
   constructor(private userService:ConfigService) {

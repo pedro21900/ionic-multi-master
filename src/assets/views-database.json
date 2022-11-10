@@ -5,6 +5,8 @@
   "mode": "partial",
   "tables": [],
   "views": [
-    {"name": "vw_equino", "value": "SELECT eq.id, eq.ds_identificacao_animal, te.ds_especie, ra.ds_raca , eq.last_modified FROM tb_equino eq LEFT JOIN tb_especie te on eq.cd_especie = te.id LEFT JOIN tb_raca ra on eq.cd_raca = ra.id"}
+    {"name": "vw_equino_list", "value": "SELECT eq.id, eq.ds_identificacao_animal, te.ds_especie, ra.ds_raca ,eq.cd_exploracao_pecuaria, eq.last_modified FROM tb_equino eq LEFT JOIN tb_especie te on eq.cd_especie = te.id LEFT JOIN tb_raca ra on eq.cd_raca = ra.id"},
+    {"name": "vw_expr_pec_equideo", "value": "SELECT ex.id as id, tp.ds_produtor, pr.ds_propriedade, tm.ds_municipio, te.ds_estado,ex.cd_estado,ex.last_modified FROM tb_exploracao_pecuaria ex left join tb_produtor tp on ex.cd_produtor = tp.id left join tb_estado te on ex.cd_estado = te.id_estado left join (SELECT id,  ds_propriedade_rural as ds_propriedade,  cd_proprietario,  cd_municipio, cd_estado,  last_modified FROM tb_propriedade_rural UNION SELECT id, ds_endereco as ds_propriedade, cd_proprietario, cd_municipio,  cd_estado,  last_modified FROM tb_propriedade_urbana) pr on ex.cd_propriedade_rural = pr.id or ex.cd_propriedade_urbana LEFT JOIN tb_municipio tm on pr.cd_municipio = tm.id"}
+
   ]
 }

@@ -264,7 +264,6 @@ export class AppComponent implements OnInit {
       private sqLiteService: SQLiteService,
       private router: Router,
       private configService:ConfigService,
-      private  serverApiResourceProvider:ServerApiResourceRepository
   ) {
     this.initializeApp();
   }
@@ -313,7 +312,7 @@ export class AppComponent implements OnInit {
     else {
       this.configService.urlBase.subscribe(async urlBase => {
         await this.sqLiteService.downloadDatabase(true , `${urlBase}rest/passaporteEquestre/criacaoTabelasSqlite`);
-        await this.sqLiteService.downloadDatabase(true, '/assets/values-database.json');
+        await this.sqLiteService.downloadDatabase(true, `${urlBase}rest/passaporteEquestre/sincronismoInicial`);
         this.router.navigate(['home'], {replaceUrl: true});
       })
 

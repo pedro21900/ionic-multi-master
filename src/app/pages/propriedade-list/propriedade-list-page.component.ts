@@ -5,6 +5,7 @@ import {SQLiteService} from '../../services/sql-lite.service';
 import {ExploracaoPecuariaEquideoProvider} from '../../repositories/exploracao-pecuaria-equideos.repository';
 import {ExploracaoPecuariaEquideo} from '../../domain/exploracao-pecuaria-equideos';
 import {from, Observable} from 'rxjs';
+import {ModalErrorPage} from '../modal-error/modal-error-page.component';
 
 @Component({
     selector: 'app-catalog',
@@ -16,7 +17,7 @@ export class PropriedadeListPage implements OnInit {
 
     API_RESOURCE: string = `rest/passaporteEquestre/consultaExploracaoPecuariaEquideos`;
 
-    $propriedades:Observable<ExploracaoPecuariaEquideo[]> =from(this.exploracaoPecuariaEquideoProvider.findAll());
+    $expPecEquideo:Observable<ExploracaoPecuariaEquideo[]> =from(this.exploracaoPecuariaEquideoProvider.findAll());
 
     empty =
         {
@@ -31,6 +32,7 @@ export class PropriedadeListPage implements OnInit {
         private loadingCtrl: LoadingController,
         private sqLiteService: SQLiteService,
         private navController:NavController,
+        private modalController:ModalController,
         private exploracaoPecuariaEquideoProvider:ExploracaoPecuariaEquideoProvider) {
     }
 
@@ -45,13 +47,35 @@ export class PropriedadeListPage implements OnInit {
         loading.present();
         from(this.sqLiteService.downloadDatabaseFromRequestParam(true, `${urlBase}${this.API_RESOURCE}`, cpfOrCnpjOnlyNumbers))
             .subscribe(()=> {
-                this.$propriedades = from(this.exploracaoPecuariaEquideoProvider.findAll());
+                this.$expPecEquideo = from(this.exploracaoPecuariaEquideoProvider.findAll());
+                loading.dismiss();
+            },error => {
+                this.modalErrorShow(error);
                 loading.dismiss();
             });
 
     }
 
-    equinoByPropriedadeIdNavigate(idPropriedade: number) {
-        this.navController.navigateForward('equino',{queryParams: {idPropriedade: idPropriedade}});
+    equinoByPropriedadeIdNavigate(idExpPecEquideo: number) {
+        this.navController.navigateForward('equino',{queryParams: {idExpPecEquideo: idExpPecEquideo}});
     }
+
+    async modalErrorShow(error) {
+        const modal = await this.modalController.create({
+            component: ModalErrorPage,
+            cssClass: 'modal-container',
+            componentProps: {
+                error: this.migrateErrorToInfo(error),
+            },
+        });
+        return await modal.present();
+    }
+
+    migrateErrorToInfo = (error) => {
+        return {
+            icon: 'assets/img/error.png',
+            title: 'Erro ao realizar consulta',
+            text: error
+        };
+    };
 }

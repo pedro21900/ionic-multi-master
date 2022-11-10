@@ -1,6 +1,6 @@
 export class Equino {
 
-    id?: string;
+    id?: number;
     cdEstado?: number;
     cdExploracaoPecuaria?: number;
     cdEspecie?: number;
@@ -12,6 +12,8 @@ export class Equino {
     cdParticularidade?: number;
     dsChip?: string;
     nrAssociacaoRaca?: number;
+    cdUsuarioDispositivo?:number;
+    dtCadastro?:Date;
     lastModified?: Date;
 
 }

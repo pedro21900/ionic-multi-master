@@ -23,7 +23,7 @@
             <ion-col class="ion-padding-vertical">
                 <ion-searchbar #ionSearchbar animated class="ion-no-padding"
                                type="text"
-                               (keyup.enter)="keyUpEnter(ionSearchbar.value)"></ion-searchbar>
+                               (ionChange)="ionChange(ionSearchbar.value)"></ion-searchbar>
             </ion-col>
         </ion-row>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {ExploracaoPecuariaEquideo} from '../../../domain/exploracao-pecuaria-equideos';
 
 @Component({
   selector: 'sm-propriedade-card-lg',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PropriedadeCardLgComponent implements OnInit {
 
-  @Input() data: any;
+  @Input() data: ExploracaoPecuariaEquideo;
 
   constructor() { }
 

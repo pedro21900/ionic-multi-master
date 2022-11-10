@@ -18,19 +18,18 @@ export class EquinoRepository {
 
     async findAll(): Promise<VwEquino[]> {
         return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
-            var tbEquino: DBSQLiteValues = await db.query('select * from vw_equino');
+            var tbEquino: DBSQLiteValues = await db.query('select * from vw_equino_list');
             return tbEquino.values.map(equino => objectKeysToCamelCaseV2(equino));
         });
     }
 
     async insert(equino: Equino) {
-        equino.id = uuidv4();
         console.log(equino);
         return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
             const keys: string[] = Object.keys(objectKeysToSnakeCaseV2(equino));
             const values: string[] = Object.values(equino);
-            let sqlcmd: string = `insert into tb_equino (${keys.toString()})
-                                  values (${keys.map(x => '?')})`;
+            let sqlcmd: string = `insert into tb_equino (id, ${keys.toString()})
+                                  values (1, ${keys.map(x => '?')})`;
             let ret: any = await db.run(sqlcmd, values);
             if (ret.changes.lastId > 0) {
                 return objectKeysToCamelCaseV2(ret.changes as Equino);
@@ -45,8 +44,8 @@ export class EquinoRepository {
 
         return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
             let sqlcmd: string = `update tb_equino
-                                  set ${keys.map(key => `key = ?`)}
-                                  where id = ?`;
+                                  set ${keys.map(key => `${key} = ?`)}
+                                  where id = ${equino.id}`;
             let ret: any = await db.run(sqlcmd, values);
             if (ret.changes.changes > 0) {
                 return await this.findById(equino.id);
@@ -55,7 +54,7 @@ export class EquinoRepository {
         });
     }
 
-    async findById(id: string): Promise<Equino> {
+    async findById(id: number): Promise<Equino> {
         return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
             let sqlcmd: string = 'select * from tb_equino where id = ? limit 1';
             let values: Array<any> = [id];
@@ -90,13 +89,22 @@ export class EquinoRepository {
     //   }
     // }
 
-    // async findAllByPropriedadeId(id: number): Promise<Equino[]> {
-    //   const db =  this._sqlite.dbConnection;
-    //   const keys:string=Object.keys(objectKeysToSnakeCaseV2(new Equino)).toString();
-    //   const object = await db.query(`SELECT * FROM tb_equino WHERE id_propriedade = ${id};`);
-    //   const expPecEquideo: Equino[] = object.values.map(values => objectKeysToCamelCaseV2(values));
-    //   return expPecEquideo;
-    // }
+    async findAllByExpPecEquideos(idExpPecEquideo: number): Promise<VwEquino[]> {
+        return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
+            var tbEquino: DBSQLiteValues = await db.query(`select *
+                                                           from vw_equino_list
+                                                           where cd_exploracao_pecuaria = ${idExpPecEquideo}`);
+            return tbEquino.values.map(equino => objectKeysToCamelCaseV2(equino));
+        });
+    }
 
-
+    async findByDsIdentificacaoAnimal(dsIdentificacaoAnimal: string): Promise<VwEquino[]> {
+        return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
+            var tbEquino: DBSQLiteValues = await db.query(`select *
+                                                           from vw_equino_list
+                                                           where ds_identificacao_animal like '%${dsIdentificacaoAnimal}%'`);
+            return tbEquino.values.map(equino => objectKeysToCamelCaseV2(equino));
+        });
+    }
 }
+
