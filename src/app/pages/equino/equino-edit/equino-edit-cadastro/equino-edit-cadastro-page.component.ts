@@ -11,15 +11,12 @@ import {EspecieRepository} from '../../../../repositories/especie.repository';
 import {RacaRepository} from '../../../../repositories/raca.repository';
 import {Raca} from '../../../../domain/raca';
 import {PelagemRepository} from '../../../../repositories/pelagem.repository';
-import {Pelagem} from '../../../../domain/pelagem';
 import {PelagemVariedade} from '../../../../domain/pelagem-variedade';
 import {ParticularidadeRepository} from '../../../../repositories/particularidade.repository';
-import {Particularidade} from '../../../../domain/particularidade';
-import {v4 as uuidv4} from 'uuid';
 import {ConfigService} from '../../../../services/config.service';
 import {ExploracaoPecuariaEquideoProvider} from '../../../../repositories/exploracao-pecuaria-equideos.repository';
 import {ExploracaoPecuariaEquideo} from '../../../../domain/exploracao-pecuaria-equideos';
-import {LoadingController, ToastController} from '@ionic/angular';
+import {LoadingController, NavController} from '@ionic/angular';
 import {PelagemVariedadeRepository} from '../../../../repositories/pelagem-variedade.repository';
 
 
@@ -30,7 +27,7 @@ import {PelagemVariedadeRepository} from '../../../../repositories/pelagem-varie
 })
 export class EquinoEditCadastroPage implements OnInit {
 
-    id:number;
+    id: number;
 
     equinoForm: UntypedFormGroup;
 
@@ -40,30 +37,30 @@ export class EquinoEditCadastroPage implements OnInit {
 
     $raca: Observable<Raca[]> = from(this.racaProvider.findAll());
 
-    sexos:any[]=['Macho','Femêa'];
+    sexos: any[] = ['Macho', 'Femêa'];
 
     $pelagemVariedade: Observable<PelagemVariedade[]> = from(this.pelagemVariedadeProvider.findAll());
 
-    exploracaoPecuariaEquideo:ExploracaoPecuariaEquideo;
+    exploracaoPecuariaEquideo: ExploracaoPecuariaEquideo;
 
     dtNascimentoEquino: string;
 
 
     constructor(
-        private activatedRoute:ActivatedRoute,
+        private activatedRoute: ActivatedRoute,
         private sqLiteService: SQLiteService,
         private formBuilder: UntypedFormBuilder,
         private router: Router,
-        private equinoProvider:EquinoRepository,
-        private especieProvider:EspecieRepository,
-        private racaProvider:RacaRepository,
-        private pelagemProvider:PelagemRepository,
-        private pelagemVariedadeProvider:PelagemVariedadeRepository,
-        private particularidadeProvider:ParticularidadeRepository,
-        private userService:ConfigService,
-        private exploracaoPecuariaEquideoProvider:ExploracaoPecuariaEquideoProvider,
+        private equinoProvider: EquinoRepository,
+        private especieProvider: EspecieRepository,
+        private racaProvider: RacaRepository,
+        private pelagemProvider: PelagemRepository,
+        private pelagemVariedadeProvider: PelagemVariedadeRepository,
+        private particularidadeProvider: ParticularidadeRepository,
+        private userService: ConfigService,
+        private exploracaoPecuariaEquideoProvider: ExploracaoPecuariaEquideoProvider,
         private loadingCtrl: LoadingController,
-        private toastController:ToastController
+        private navController: NavController
     ) {
     }
 
@@ -73,7 +70,9 @@ export class EquinoEditCadastroPage implements OnInit {
 
         this.createForm();
 
-        if (this.id) this.edit();
+        if (this.id) {
+            this.edit();
+        }
 
         this.userService.userLogged.subscribe(userLogged => this.userChecked = userLogged);
 
@@ -86,37 +85,31 @@ export class EquinoEditCadastroPage implements OnInit {
 
     async validation() {
 
-        const equino=new Equino();
+        const equino = new Equino();
+        const idExpPecEquideo: number = this.exploracaoPecuariaEquideo.id;
 
         this.populateEquino(equino);
         this.mergeObjectSatellite(equino);
+        this.save(equino);
 
-        if (this.id){
-            equino.id=this.id;
-            this.equinoProvider.update(equino);
-        }else this.equinoProvider.insert(equino);
-
-        console.log(equino);
-
-        this.router.navigate(['/home'], {replaceUrl: true});
+        this.navController.navigateForward('equino', {queryParams: {idExpPecEquideo}});
     }
 
-    populateEquino(equino:Equino){
+    populateEquino(equino: Equino) {
         for (const equinoForm of Object.keys(this.equinoForm.value)) {
-            if( typeof this.equinoForm.value[equinoForm] !='object' ){
-                equino[equinoForm]=this.equinoForm.value[equinoForm];
+            if (typeof this.equinoForm.value[equinoForm] != 'object') {
+                equino[equinoForm] = this.equinoForm.value[equinoForm];
             }
         }
     }
 
-    mergeObjectSatellite(equino:Equino){
-        equino.cdEstado=this.exploracaoPecuariaEquideo.cdEstado;
-        // equino.cdUsuarioDispositivo=1;
-        // equino.dtCadastro=new Date();
-        equino.cdExploracaoPecuaria=this.exploracaoPecuariaEquideo.id;
+    mergeObjectSatellite(equino: Equino) {
+        equino.cdEstado = this.exploracaoPecuariaEquideo.cdEstado;
+        equino.cdExploracaoPecuaria = this.exploracaoPecuariaEquideo.id;
 
     }
-    createForm(){
+
+    createForm() {
         this.equinoForm = this.formBuilder.group({
             cdEspecie: [null, [Validators.required]],
             dsIdentificacaoAnimal: [null, [Validators.required]],
@@ -138,13 +131,22 @@ export class EquinoEditCadastroPage implements OnInit {
             }
         }
 
-        this.equinoForm.patchValue(equino)
+        this.equinoForm.patchValue(equino);
     }
 
     setDtNascmentoEquino($event: any) {
-       const day= new Date ($event.detail.value).getDate()
-       const month =new Date ($event.detail.value).getMonth()
-       const year= new Date ($event.detail.value).getFullYear()
-        this.dtNascimentoEquino =`${day}/${month}/${year}`;
+        const day = new Date($event.detail.value).getDate();
+        const month = new Date($event.detail.value).getMonth();
+        const year = new Date($event.detail.value).getFullYear();
+        this.dtNascimentoEquino = `${day}/${month}/${year}`;
+    }
+
+    save(equino: Equino) {
+        if (this.id) {
+            equino.id = this.id;
+            this.equinoProvider.update(equino);
+        } else {
+            this.equinoProvider.insert(equino);
+        }
     }
 }

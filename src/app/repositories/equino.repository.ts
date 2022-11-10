@@ -24,12 +24,13 @@ export class EquinoRepository {
     }
 
     async insert(equino: Equino) {
+        const id:number = Math.floor(Math.random() * 100);
         console.log(equino);
         return this._databaseService.executeQuery<any>(async (db: SQLiteDBConnection) => {
             const keys: string[] = Object.keys(objectKeysToSnakeCaseV2(equino));
             const values: string[] = Object.values(equino);
             let sqlcmd: string = `insert into tb_equino (id, ${keys.toString()})
-                                  values (1, ${keys.map(x => '?')})`;
+                                  values (${id}, ${keys.map(x => '?')})`;
             let ret: any = await db.run(sqlcmd, values);
             if (ret.changes.lastId > 0) {
                 return objectKeysToCamelCaseV2(ret.changes as Equino);
